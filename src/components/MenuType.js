@@ -13,7 +13,7 @@ display :grid ;
 flex-direction :column ;
 justify-content :space-around ;
 height :95vh;
-width : 15vw;
+width : 16vw;
 background-color : #404040;
 border-radius : 20px;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
@@ -21,7 +21,7 @@ box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 `
 const MenuLogo = styled.div`
 text-align :center;
-width : 13vw;
+width : 14vw;
 height : 5vw;
 margin : 45px 0 0 0 ;
 display : flex ;
@@ -58,13 +58,14 @@ display : flex ;
 justify-content : space-between;
 margin :0 0 27px 0 ;
 align-items : center;
-width : 13vw;
+width : 14vw;
 height : 4vw ;
 color : white ;
 `
 
 const MenuList = styled.div`
 padding : 0 20px 0 0 ;
+font-size : 22px ;
 `
 
 function MenuType () {
