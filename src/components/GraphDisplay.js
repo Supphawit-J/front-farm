@@ -13,7 +13,7 @@ const DisplayTop = styled.div`
 width : 78vw;
 height : 55vh ;
 background-color : #404040 ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ;
 align-items : center ;
@@ -26,7 +26,7 @@ width : 75vw;
 height : 40vh ;
 background-color : white ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-border-radius : 40px ;
+border-radius : 20px ;
 display : flex ;
 align-items : center ;
 `
@@ -67,10 +67,10 @@ justify-content : space-between ;
 `
 
 const DisplayMin = styled.div`
-width : 24vw;
+width : 25vw;
 height : 20vh;
 background-color : #404040 ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ; 
 flex-direction : column ;
@@ -78,21 +78,21 @@ justify-content : space-evenly ;
 `
 
 const DisplayMax = styled.div`
-width : 24vw;
+width : 25vw;
 height : 20vh;
 background-color : #404040 ;
-border-radius : 50px ;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+border-radius : 20px ;
+box-shadow: 10px 211px 5px -8px rgba(0,0,0,0.32);
 display : flex ; 
 flex-direction : column ;
 justify-content : space-evenly ;
 `
 
 const DisplayAvg = styled.div`
-width : 24vw;
+width : 25vw;
 height : 20vh;
 background-color : #404040 ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ; 
 flex-direction : column ;
