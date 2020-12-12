@@ -53,7 +53,7 @@ color : white ;
 const ListLogo = styled.div`
 background-color : #F1B24A;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-border-radius : 30px ;
+border-radius : 20px ;
 display : flex ;
 justify-content : space-between;
 margin :0 0 27px 0 ;
