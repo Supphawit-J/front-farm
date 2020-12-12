@@ -9,21 +9,21 @@ display : flex ;
 justify-content : space-between ;
 align-items : center ;
 border-radius : 30px ;
-margin : 55px 0 0 0 ;
+margin : 40px 0 0 0 ;
 `
 
 const TitleName = styled.div`
 align-items : center ;
 font-size : 65px ;
 color : #ffffff ;
-margin : 0 0 0 20px ;
+margin : 0 0 0 35px ;
 cursor: pointer;
 `
 const IconToggle = styled.div`
 color : #ffffff;
 display : flex ;
 align-items : center ;
-margin : 0 20px 0 0 ;
+margin : 0 35px 0 0 ;
 cursor: pointer;
 
 `
