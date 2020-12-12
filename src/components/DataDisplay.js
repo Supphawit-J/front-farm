@@ -13,9 +13,9 @@ flex-flow: column wrap;
 
 const TopLeft = styled.div`
 background-color : #404040 ;
-width : 37vw ;
+width : 38vw ;
 height : 37vh ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 cursor: pointer;
 display : flex; 
@@ -27,7 +27,7 @@ const TopRight = styled.div`
 background-color : #404040 ;
 width : 38vw ;
 height : 37vh ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 cursor: pointer;
 display : flex; 
@@ -39,7 +39,7 @@ const BottomLeft = styled.div`
 background-color :#404040 ;
 width : 38vw ;
 height : 37vh ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 cursor: pointer;
 display : flex; 
@@ -51,7 +51,7 @@ const BottomRight = styled.div`
 background-color : #404040 ;
 width : 38vw ;
 height : 37vh ;
-border-radius : 50px ;
+border-radius : 20px ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 cursor: pointer;
 display : flex; 
