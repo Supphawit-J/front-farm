@@ -4,7 +4,7 @@ import { Dashboard } from '@styled-icons/boxicons-solid/Dashboard'
 import { TemperatureHigh } from '@styled-icons/fa-solid/TemperatureHigh'
 import { Wind } from '@styled-icons/boxicons-regular/Wind'
 import { Water } from '@styled-icons/ionicons-outline/Water'
-import { Air } from '@styled-icons/entypo/Air'
+import { Sun } from '@styled-icons/boxicons-regular/Sun'
 import { Gumtree } from '@styled-icons/simple-icons/Gumtree'
 import { Link } from 'react-router-dom'
 
@@ -25,7 +25,6 @@ padding-top: 30px ;
 display : flex ;
 flex-direction : row ;
 `
-
 const MainLogo = styled.div`
 display : flex ;
 justify-content : center;
@@ -72,7 +71,7 @@ function MenuType () {
 
         <Link to='/humidity'><MenuList><Water size ="30"/>Humidity</MenuList></Link>
 
-        <Link to='/Airpollution'><MenuList><Air size ="30"/>Airpollution</MenuList></Link>
+        <Link to='/light'><MenuList><Sun size ="30"/>Light</MenuList></Link>
       </MenuLayout>
     </ShowCase>
   )

@@ -18,8 +18,8 @@ export default {
     path: '/humidity',
     component: lazy(() => import('../pages/Humidity'))
   },
-  Airpollution: {
-    path: '/airpollution',
-    component: lazy(() => import('../pages/Airpollution'))
+  Light: {
+    path: '/light',
+    component: lazy(() => import('../pages/Light'))
   }
 }

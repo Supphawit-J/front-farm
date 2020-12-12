@@ -1,11 +1,11 @@
 import React from 'react'
 import LayoutData from '../components/LayoutData'
 
-function Airpollution () {
+function Light () {
   return (
     <>
     <LayoutData/>
     </>
   )
 }
-export default Airpollution
+export default Light
