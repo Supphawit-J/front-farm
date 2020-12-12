@@ -8,10 +8,8 @@ height : 10vh ;
 display : flex ;
 justify-content : space-between ;
 align-items : center ;
-/* background-color : #404040;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32); */
 border-radius : 30px ;
-margin : 45px 0 0 0 ; 
+margin : 55px 0 0 0 ; 
 `
 
 const TitleName = styled.div`
