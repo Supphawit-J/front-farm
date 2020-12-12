@@ -23,7 +23,7 @@ const MenuLogo = styled.div`
 text-align :center;
 width : 14vw;
 height : 5vw;
-margin : 45px 0 0 0 ;
+margin : 30px 0 0 0 ;
 display : flex ;
 justify-content : space-between;
 align-items : center ;
