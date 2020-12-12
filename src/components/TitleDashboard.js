@@ -8,23 +8,24 @@ height : 10vh ;
 display : flex ;
 justify-content : space-between ;
 align-items : center ;
-background-color : #404040;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+/* background-color : #404040;
+box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32); */
 border-radius : 30px ;
-margin-top : 30px ;
+margin : 45px 0 0 0 ; 
 `
 
 const TitleName = styled.div`
 align-items : center ;
-font-size : 40px ;
+font-size : 65px ;
 color : #ffffff ;
 margin : 0 0 0 20px ;
+cursor: pointer;
 `
 const IconToggle = styled.div`
-margin : 0 20px 0 0 ;
 color : #ffffff;
 display : flex ;
 align-items : center ; 
+cursor: pointer;
 `
 const SettingMode = styled.div`
 font-size : 20px;
@@ -36,7 +37,7 @@ function TitleDashboard () {
     <ShowCase>
     <TitleName>Sensor Dashboard</TitleName>
     <IconToggle>
-    <SettingMode>LightMode</SettingMode>
+    <SettingMode>Dark Mode</SettingMode>
     <ToggleOff size="40" />
     </IconToggle>
     </ShowCase>
