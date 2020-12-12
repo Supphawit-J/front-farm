@@ -21,57 +21,108 @@ box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 `
 const MenuLogo = styled.div`
 text-align :center;
-padding-top: 30px ;
+width : 13vw;
+height : 5vw;
+margin : 45px 0 0 0 ;
 display : flex ;
-flex-direction : row ;
+justify-content : space-between;
+align-items : center ;
+border-radius : 30px ;
 `
 const MainLogo = styled.div`
 display : flex ;
 justify-content : center;
 align-items : center;
-background-color : #F1B24A;
 color : #ffffff;
-width : 13vw;
-height : 5vw;
-border-radius : 30px ;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 font-size : 30px;
-
+padding : 0 10px 0 0 ;
+`
+const MainIcon = styled.div`
+padding : 0 0 0 10px ;
+color : white ;
 `
 
 const MenuLayout = styled.div`
 text-align :center;
 `
+const LogoIcon = styled.div`
+padding : 0 0 0 20px ;
+color : white ;
+`
+
+const ListLogo = styled.div`
+background-color : #F1B24A;
+box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+border-radius : 30px ;
+display : flex ;
+justify-content : space-between;
+margin :0 0 27px 0 ;
+align-items : center;
+width : 13vw;
+height : 4vw ;
+color : white ;
+`
 
 const MenuList = styled.div`
-display : flex ;
-justify-content : space-evenly;
-align-items : center;
-background-color : #F1B24A;
-width : 13vw;
-height : 3vw;
-border-radius : 30px ;
-margin-bottom : 40px;
-color : white ;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+padding : 0 20px 0 0 ;
 `
 
 function MenuType () {
   return (
     <ShowCase>
+      <Link to='/'>
       <MenuLogo>
-        <Link to='/'><MainLogo><Gumtree size="30"/>ArgoGreen</MainLogo></Link>
+        <MainIcon>
+        <Gumtree size="50"/>
+        </MainIcon>
+        <MainLogo>ArgoGreen</MainLogo>
       </MenuLogo>
+      </Link>
       <MenuLayout>
-        <Link to='/'><MenuList><Dashboard size="30" />Dashboard</MenuList></Link>
+        <Link to='/'>
+        <ListLogo>
+        <LogoIcon>
+        <Dashboard size="30" />
+        </LogoIcon>
+        <MenuList>Dashboard</MenuList>
+        </ListLogo>
+        </Link>
 
-        <Link to='/temperature'><MenuList><TemperatureHigh size="30"/>Temperature</MenuList></Link>
+        <Link to='/temperature'>
+        <ListLogo>
+        <LogoIcon>
+        <TemperatureHigh size="30"/>
+        </LogoIcon>
+        <MenuList>Temperature</MenuList>
+        </ListLogo>
+        </Link>
 
-        <Link to='/wind'><MenuList><Wind size = "30"/>Wind</MenuList></Link>
+        <Link to='/wind'>
+        <ListLogo>
+        <LogoIcon>
+        <Wind size = "30"/>
+        </LogoIcon>
+        <MenuList>Wind</MenuList>
+        </ListLogo>
+        </Link>
 
-        <Link to='/humidity'><MenuList><Water size ="30"/>Humidity</MenuList></Link>
+        <Link to='/humidity'>
+        <ListLogo>
+        <LogoIcon>
+        <Water size ="30"/>
+        </LogoIcon>
+        <MenuList>Humidity</MenuList>
+        </ListLogo>
+        </Link>
 
-        <Link to='/light'><MenuList><Sun size ="30"/>Light</MenuList></Link>
+        <Link to='/light'>
+        <ListLogo>
+        <LogoIcon>
+        <Sun size ="30"/>
+        </LogoIcon>
+        <MenuList>Light</MenuList>
+        </ListLogo>
+        </Link>
       </MenuLayout>
     </ShowCase>
   )
