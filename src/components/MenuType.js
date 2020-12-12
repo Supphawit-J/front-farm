@@ -83,7 +83,7 @@ function MenuType () {
         <Link to='/'>
         <ListLogo>
         <LogoIcon>
-        <Dashboard size="30" />
+        <Dashboard size="35" />
         </LogoIcon>
         <MenuList>Dashboard</MenuList>
         </ListLogo>
@@ -92,7 +92,7 @@ function MenuType () {
         <Link to='/temperature'>
         <ListLogo>
         <LogoIcon>
-        <TemperatureHigh size="30"/>
+        <TemperatureHigh size="35"/>
         </LogoIcon>
         <MenuList>Temperature</MenuList>
         </ListLogo>
@@ -101,7 +101,7 @@ function MenuType () {
         <Link to='/wind'>
         <ListLogo>
         <LogoIcon>
-        <Wind size = "30"/>
+        <Wind size = "35"/>
         </LogoIcon>
         <MenuList>Wind</MenuList>
         </ListLogo>
@@ -110,7 +110,7 @@ function MenuType () {
         <Link to='/humidity'>
         <ListLogo>
         <LogoIcon>
-        <Water size ="30"/>
+        <Water size ="35"/>
         </LogoIcon>
         <MenuList>Humidity</MenuList>
         </ListLogo>
@@ -119,7 +119,7 @@ function MenuType () {
         <Link to='/light'>
         <ListLogo>
         <LogoIcon>
-        <Sun size ="30"/>
+        <Sun size ="35"/>
         </LogoIcon>
         <MenuList>Light</MenuList>
         </ListLogo>
