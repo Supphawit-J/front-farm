@@ -34,7 +34,8 @@ function WeeklyGraph ({ status }) {
       chart: {
         type: 'bar',
         height: '100%',
-        background: '#fff'
+        background: '#fff',
+        fontFamily: 'Montserrat, sans-serif'
 
       },
       plotOptions: {
