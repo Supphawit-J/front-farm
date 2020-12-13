@@ -124,6 +124,9 @@ function GraphDisplay () {
       <Display titlecheck={ min.titlecheck } titledisplay ={ min.titledisplay } unitcheck ={ min.unitcheck }/>
       <Display titlecheck={ max.titlecheck } titledisplay ={ max.titledisplay } unitcheck ={ max.unitcheck }/>
       <Display titlecheck={ avg.titlecheck } titledisplay ={ avg.titledisplay } unitcheck ={ avg.unitcheck }/>
+      <Display/>
+      <Display/>
+      <Display/>
     </DisplayBottom>
     </ShowCase>
     </>
