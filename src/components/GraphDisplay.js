@@ -122,6 +122,9 @@ function GraphDisplay () {
       <Display/>
       <Display/>
       <Display/>
+
+      <Display/>
+
     </DisplayBottom>
     </ShowCase>
     </>
