@@ -13,5 +13,4 @@ function withHelmet (title) {
     </>
   )
 }
-
 export default withHelmet
