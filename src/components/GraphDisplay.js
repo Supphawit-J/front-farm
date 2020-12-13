@@ -22,6 +22,17 @@ flex-direction : column ;
 justify-content : flex-start ;
 `
 
+// const AreaGraph = styled.div`
+// width : 75vw;
+// height : 40vh ;
+// background-color : white ;
+// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+// border-radius : 20px ;
+// display : flex ;
+// align-items : center ;
+// >>>>>>> 57ba4f4ef30632dca1f8eab70dddaffd41e1e938
+// `
+
 const SlotBy = styled.div`
 display : flex ;
 justify-content : flex-end ;
@@ -56,11 +67,11 @@ justify-content : space-between ;
 `
 
 const DisplayMin = styled.div`
-width : 24vw;
+width : 25vw;
 height : 20vh;
 background-color : #404040 ;
 border-radius : 2rem ;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+box-shadow: 10px 211px 5px -8px rgba(0,0,0,0.32);
 display : flex ; 
 flex-direction : column ;
 justify-content : space-evenly ;
