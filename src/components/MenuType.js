@@ -103,7 +103,7 @@ function MenuType () {
         <LogoIcon>
         <Wind size = "35"/>
         </LogoIcon>
-        <MenuList>Wind</MenuList>
+        <MenuList>Wind Speed</MenuList>
         </ListLogo>
         </Link>
 

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import Display from '../components/DisplayDataGraph/Display'
+import { Actioncontext } from '../context/Actioncontext'
 
 import RealtimeGraph from './RealtimeGraph'
 import WeeklyGraph from './WeeklyGraph'
@@ -94,6 +95,7 @@ font-size : 2rem ;
 `
 
 function GraphDisplay () {
+  const { min, max, avg } = useContext(Actioncontext)
   const [status1, setStatus1] = useState(true)
   const [status2, setStatus2] = useState(false)
 
@@ -119,9 +121,9 @@ function GraphDisplay () {
         <WeeklyGraph status={status2}/>
     </DisplayTop>
     <DisplayBottom>
-      <Display/>
-      <Display/>
-      <Display/>
+      <Display titlecheck={ min.titlecheck } titledisplay ={ min.titledisplay } unitcheck ={ min.unitcheck }/>
+      <Display titlecheck={ max.titlecheck } titledisplay ={ max.titledisplay } unitcheck ={ max.unitcheck }/>
+      <Display titlecheck={ avg.titlecheck } titledisplay ={ avg.titledisplay } unitcheck ={ avg.unitcheck }/>
     </DisplayBottom>
     </ShowCase>
     </>

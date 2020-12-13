@@ -34,14 +34,20 @@ color : white ;
 font-size : 30px ;
 `
 
-function Display () {
+function Display (props) {
   return (
     <>
       <DisplayMin>
-        <TitleCheck>Min</TitleCheck>
+        <TitleCheck>
+        <p>{props.titlecheck}</p>
+        </TitleCheck>
         <NumberUnit>
-        <TitleDisplay>10</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
+        <TitleDisplay>
+        <p>{props.titledisplay}</p>
+        </TitleDisplay>
+        <TitleUnit>
+        <p>{props.unitcheck}</p>
+        </TitleUnit>
         </NumberUnit>
       </DisplayMin>
     </>
