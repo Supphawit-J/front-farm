@@ -8,13 +8,13 @@ const ShowCase = styled.div`
 display : flex ;
 flex-direction : column ;
 width : 80vw;
-height : 85vh;
+height : 83vh;
 justify-content : space-around ;
 `
 
 const DisplayTop = styled.div`
 width : 78vw;
-height : 60vh ;
+height : 55vh ;
 background-color : #fff ;
 border-radius : 2rem ;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
@@ -24,24 +24,12 @@ flex-direction : column ;
 justify-content : flex-start ;
 `
 
-// const AreaGraph = styled.div`
-// width : 75vw;
-// height : 40vh ;
-// background-color : white ;
-// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-// border-radius : 20px ;
-// display : flex ;
-// align-items : center ;
-// >>>>>>> 57ba4f4ef30632dca1f8eab70dddaffd41e1e938
-// `
-
 const SlotBy = styled.div`
 display : flex ;
 justify-content : flex-end ;
 width : 78vw ;
 height : 5vh ;
 margin: .8rem 10rem .2rem 0rem;
-
 `
 
 const GraphMenu = styled.button`
@@ -65,65 +53,11 @@ transition:  color 0.2s linear;
 
 const DisplayBottom = styled.div`
 width : 78vw;
-height : 20vh ;
+height : 18vh ;
 display : flex ;
 justify-content : space-between ;
 `
 
-// const DisplayMin = styled.div`
-// width : 25vw;
-// height : 20vh;
-// background-color : #404040 ;
-// border-radius : 20px ;
-// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-// display : flex ;
-// flex-direction : column ;
-// justify-content : space-evenly ;
-// `
-
-// const DisplayMax = styled.div`
-// width : 25vw;
-// height : 20vh;
-// background-color : #404040 ;
-// border-radius : 20px ;
-// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-// display : flex ;
-// flex-direction : column ;
-// justify-content : space-evenly ;
-// `
-
-// const DisplayAvg = styled.div`
-// width : 25vw;
-// height : 20vh;
-// background-color : #404040 ;
-// border-radius : 20px ;
-// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-// display : flex ;
-// flex-direction : column ;
-// justify-content : space-evenly ;
-// `
-// const TitleCheck = styled.div`
-// color : white ;
-// font-size : 30px ;
-// margin : 0 0 0 40px ;
-// `
-// const NumberUnit = styled.div`
-// display : flex ;
-// flex-direction : row ;
-// margin : 0 40px 0 40px ;
-// align-items : center ;
-// justify-content : space-between ;
-// `
-
-// const TitleDisplay = styled.div`
-// color : white ;
-// font-size : 100px ;
-
-// `
-// const TitleUnit = styled.div`
-// color : white ;
-// font-size : 30px ;
-// `
 const DisplayMin = styled.div`
 width : 25vw;
 height : 20vh;
@@ -185,6 +119,8 @@ function GraphDisplay () {
         <WeeklyGraph status={status2}/>
     </DisplayTop>
     <DisplayBottom>
+      <Display/>
+      <Display/>
       <Display/>
     </DisplayBottom>
     </ShowCase>
