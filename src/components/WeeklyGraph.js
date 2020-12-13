@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Chart from 'react-apexcharts'
 import ApexCharts from 'apexcharts'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 
-function WeeklyGraph () {
+function WeeklyGraph ({ status }) {
   // gen  7 day
+
   const [avg, setAvg] = useState([])
   const bigData2 = []
   const time2 = new Date()
@@ -21,6 +22,11 @@ function WeeklyGraph () {
   const handleAvg = () => {
     setAvg(bigData2.map(index => index))
   }
+  const GraphContainer = styled.div`
+    padding: 1rem;
+    width: 95%;
+    height: 90%;
+`
 
   const barSet = {
 
@@ -28,7 +34,7 @@ function WeeklyGraph () {
       chart: {
         type: 'bar',
         height: '100%',
-        background: '#404040'
+        background: '#fff'
 
       },
       plotOptions: {
@@ -50,7 +56,7 @@ function WeeklyGraph () {
 
         labels: {
           style: {
-            colors: '#fff'
+            colors: '#000'
           }
         },
         tickPlacement: 'on'
@@ -58,7 +64,7 @@ function WeeklyGraph () {
       },
       legend: {
         labels: {
-          colors: '#fff'
+          colors: '#000'
         }
       },
       yaxis: {
@@ -71,12 +77,12 @@ function WeeklyGraph () {
         title: {
           text: 'something',
           style: {
-            color: '#fff'
+            color: '#000'
           }
         },
         labels: {
           style: {
-            colors: '#fff'
+            colors: '#000'
           }
         }
       },
@@ -107,9 +113,9 @@ function WeeklyGraph () {
   useEffect(() => {
     handleAvg()
   }, [])
-
+  console.log(status)
   return (
-    <>
+    <GraphContainer style={{ display: status === true ? 'block' : 'none' }}>
 
       <Chart
           options={barSet.options}
@@ -119,7 +125,7 @@ function WeeklyGraph () {
           height={barSet.options.chart.height}
         />
 
-    </>
+    </GraphContainer>
   )
 }
 export default WeeklyGraph

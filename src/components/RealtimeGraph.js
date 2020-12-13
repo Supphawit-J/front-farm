@@ -10,8 +10,9 @@ import ButtonGroup from '@material-ui/core/ButtonGroup'
 import { MuiPickersUtilsProvider, TimePicker } from '@material-ui/pickers'
 import Container from '@material-ui/core/Container'
 
-function RealtimeGraph () {
-  // gen one day
+/* global alert */
+function RealtimeGraph ({ status }) {
+  // data
   const [info, setInfo] = useState([])
   const time = new Date()
   const bigData = []
@@ -25,13 +26,13 @@ function RealtimeGraph () {
     setInfo(bigData.map(index => index))
   }
 
-  // chart option
+  // chart
   const chartSet = {
     options: {
       chart: {
         id: 'mychart',
         width: '100%',
-        height: '100%',
+        height: '85%',
         type: 'area',
         zoom: {
           autoScaleYaxis: true
@@ -135,15 +136,9 @@ function RealtimeGraph () {
       selection: 'one_day'
     }
   }
-  const [startTime, setStartTime] = useState(new Date())
-  const [endTime, setEndTime] = useState(new Date())
-  const handleStartTime = (date) => {
-    setStartTime(date)
-    setEndTime((new Date(date)).setMinutes((new Date(date)).getMinutes() + 5))
-  }
-  const handleEndTime = (date) => {
-    setEndTime(date)
-  }
+  const [startTime, setStartTime] = useState()
+  const [endTime, setEndTime] = useState()
+
   function updateData (timeline) {
     chartSet.options.selection = timeline
 
@@ -194,16 +189,42 @@ function RealtimeGraph () {
 
         break
       case 'custom':
-        ApexCharts.exec(
-          'mychart',
-          'zoomX',
-          new Date(startTime).getTime(),
-          new Date(endTime).getTime()
-        )
+        if (endTime && startTime) {
+          ApexCharts.exec(
+            'mychart',
+            'zoomX',
+            new Date(startTime).getTime(),
+            new Date(endTime).getTime()
+          )
+        }
         break
       default:
     }
   }
+
+  const handleStartTime = (date) => {
+    if (endTime) {
+      if (((new Date(endTime).getTime()) - (new Date(startTime).getTime())) <= 0) {
+        setStartTime(date)
+      } else {
+        alert('Select new end time')
+      }
+    } else {
+      setStartTime(date)
+    }
+  }
+  const handleEndTime = (date) => {
+    if (startTime) {
+      if (((new Date(date).getTime()) - (new Date(startTime).getTime())) >= 0) {
+        setEndTime(date)
+      } else {
+        alert('Select new start time')
+      }
+    } else {
+      setEndTime(date)
+    }
+  }
+
   const filterBtn = [
     { id: 'half_minute', text: 'last 30 minutes' },
     { id: 'one_hour', text: 'last 1 hours' },
@@ -212,11 +233,16 @@ function RealtimeGraph () {
     { id: 'one_day', text: 'today' }
   ]
 
+  const timeFilter = [
+    { value: startTime, func: handleStartTime },
+    { value: endTime, func: handleEndTime }
+  ]
+
   useEffect(() => {
     handleTime()
   }, [])
-  // style
 
+  // style
   const theme = createMuiTheme({
     palette: {
       primary: {
@@ -225,33 +251,58 @@ function RealtimeGraph () {
         dark: '#F19E4A',
         contrastText: '#fff'
       }
+    },
+    overrides: {
+      TimePicker
     }
   })
 
   const GroupBtn = styled(ButtonGroup)({
-    height: '6vh'
+    borderRadius: 10,
+    height: props => props.id === 'custom' ? '4vh' : '6vh'
 
   })
 
   const FilterBtn = styled(Button)({
     borderRadius: 10,
-    fontSize: props => props.id === 'custom' ? '0.7rem' : '1rem'
+    fontSize: props => props.id === 'custom' ? '1rem' : '0.7rem',
+    fontWeight: props => props.id === 'custom' ? 'bold' : 'normal',
+    '&:hover': {
+      backgroundColor: '#fff',
+      color: '#F1B24A',
+      boxShadow: 'none'
+    }
   })
 
   const FilterLabel = styled(Container)({
     display: 'flex',
-    justify: 'center',
-    align: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
-    height: 'auto'
+    height: '10%',
+    marginBottom: '1.5rem'
+  })
+
+  const TimeSelector = styled(Container)({
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '45%'
+
+  })
+
+  const TimeLabel = styled(TimePicker)({
+    width: '40%'
   })
 
   const GraphContainer = styled(Container)({
-
-    direction: 'column',
+    padding: '1rem',
     width: '100%',
-    height: '100%'
+    height: '80%',
+    display: status === true ? 'flex' : 'none',
+    flexDirection: 'column'
   })
+
   return (
     <GraphContainer>
       <ThemeProvider theme={theme}>
@@ -265,39 +316,31 @@ function RealtimeGraph () {
               />
             ))}
           </GroupBtn>
-
+          <TimeSelector>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Grid container justify="space-evenly">
-            <TimePicker
-              ampm={false}
-              variant="dialog"
-              openTo="hours"
-              label="select start times"
-              format="HH:mm"
-              margin="normal"
-              value={startTime}
-              onChange={handleStartTime}
-            />
-            <TimePicker
-              ampm={false}
-              variant="dialog"
-              openTo="hours"
-              label="select end times"
-              format="HH:mm"
-              margin="normal"
-              value={endTime}
-              onChange={handleEndTime}
-            />
+            {timeFilter.map(index => (
+             <TimeLabel
+                ampm={false}
+                variant="dialog"
+                openTo="hours"
+                label="select start times"
+                format="HH:mm"
+                margin="normal"
+                value={index.value}
+                onChange={index.func}
+              />
+            ))}
+
           </Grid>
           </MuiPickersUtilsProvider>
-          <GroupBtn color= "primary" variant="contained" >
-          <FilterBtn color="primary" id="custom"
+          <FilterBtn
+            id="custom"
             onClick={() => updateData('custom')}
             className={ (chartSet.options.selection === 'one_day' ? 'active' : '')}
             children={'ENTER'}
           />
-          </GroupBtn>
-
+          </TimeSelector>
         </FilterLabel>
       </ThemeProvider>
       <Chart
