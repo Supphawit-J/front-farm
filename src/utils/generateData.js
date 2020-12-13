@@ -59,3 +59,61 @@ export function GenerateData () {
   // job.start()
   return [{ bigData }, { useData, handleUpdate, clearData }]
 }
+
+const bigData2 = []
+const time2 = new Date()
+time2.setHours(6)
+time2.setMinutes(0)
+time2.setSeconds(0)
+
+const data = []
+for (let j = 1; j <= 7; j++) {
+  data.push({
+    dataOn1stDay: {
+      device1: [{
+        device_id: 'A1',
+        temperature: [
+          {
+            device_id: 1,
+            max: Math.floor((Math.random() * (10 - 5)) + 5),
+            min: Math.floor((Math.random() * (10 - 5)) + 5),
+            avg: Math.floor((Math.random() * (10 - 5)) + 5)
+          }
+        ],
+        humidity: [
+          {
+            device_id: 1,
+            max: Math.floor((Math.random() * (10 - 5)) + 5),
+            min: Math.floor((Math.random() * (10 - 5)) + 5),
+            avg: Math.floor((Math.random() * (10 - 5)) + 5)
+          }
+        ],
+        windvelocity: [
+          {
+            device_id: 1,
+            max: Math.floor((Math.random() * (10 - 5)) + 5),
+            min: Math.floor((Math.random() * (10 - 5)) + 5),
+            avg: Math.floor((Math.random() * (10 - 5)) + 5)
+          }
+        ],
+        pressure: [
+          {
+            device_id: 1,
+            max: Math.floor((Math.random() * (10 - 5)) + 5),
+            min: Math.floor((Math.random() * (10 - 5)) + 5),
+            avg: Math.floor((Math.random() * (10 - 5)) + 5)
+          }
+        ]
+      }]
+    }
+  })
+}
+
+bigData2.push({
+  status: 200,
+  data: {
+    dataInOneWeek: {
+      data: data
+    }
+  }
+})
