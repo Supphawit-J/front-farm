@@ -28,7 +28,7 @@ height : 15vh;
 
 const DisplayDashboard = styled.div`
 width : 80vw;
-height : 85vh;
+height : 83vh;
 `
 
 function LayoutData () {
