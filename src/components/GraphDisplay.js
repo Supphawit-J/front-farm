@@ -39,9 +39,11 @@ justify-content : flex-end ;
 width : 78vw ;
 height : 5vh ;
 margin: .8rem 10rem .2rem 0rem;
+
 `
 
 const GraphMenu = styled.button`
+font-family: 'Montserrat', sans-serif;
 font-size : 1rem ;
 color : #000 ;
 text-decoration: none;

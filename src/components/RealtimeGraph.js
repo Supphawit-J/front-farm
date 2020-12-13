@@ -34,10 +34,35 @@ function RealtimeGraph ({ status }) {
         width: '100%',
         height: '85%',
         type: 'area',
+        fontFamily: 'Montserrat, sans-serif',
         zoom: {
           autoScaleYaxis: true
         },
-        background: '#fff'
+        background: '#fff',
+        toolbar: {
+          show: true,
+          tools: {
+            download: true,
+            selection: false,
+            zoom: false,
+            zoomin: false,
+            zoomout: false,
+            pan: false,
+            reset: false
+          },
+          export: {
+            csv: {
+              filename: undefined,
+              columnDelimiter: ',',
+              headerCategory: 'category',
+              headerValue: 'value',
+              dateFormatter (timestamp) {
+                return new Date(timestamp).toLocaleString()
+              }
+            }
+          },
+          autoSelected: 'zoom'
+        }
       },
       dataLabels: {
         enabled: false
@@ -48,9 +73,7 @@ function RealtimeGraph ({ status }) {
         min: (info.map(index => index.x))[0],
         labels: {
           datetimeUTC: false,
-          style: {
-            colors: '#000'
-          }
+          style: { colors: '#000' }
         }
       },
       yaxis:
@@ -254,6 +277,9 @@ function RealtimeGraph ({ status }) {
     },
     overrides: {
       TimePicker
+    },
+    typography: {
+      fontFamily: 'Montserrat, sans-serif'
     }
   })
 
@@ -292,7 +318,7 @@ function RealtimeGraph ({ status }) {
   })
 
   const TimeLabel = styled(TimePicker)({
-    width: '40%'
+    width: '45%'
   })
 
   const GraphContainer = styled(Container)({
