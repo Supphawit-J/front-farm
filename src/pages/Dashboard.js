@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import LayoutDashboard from '../components/LayoutDashboard'
-import { FetchData } from '../services/FetchData'
+import { GenerateData } from '../utils/generateData'
 
 import { Actioncontext } from '../context/Actioncontext'
 
 function Dashboard () {
-  const [{ bigData }, { useData, handleUpdate }] = FetchData()
+  const [{ bigData }, { useData, handleUpdate }] = GenerateData()
 
   const CronJob = require('cron').CronJob
 
