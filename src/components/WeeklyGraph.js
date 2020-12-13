@@ -35,7 +35,11 @@ function WeeklyGraph ({ status }) {
         type: 'bar',
         height: '100%',
         background: '#fff',
-        fontFamily: 'Montserrat, sans-serif'
+        fontFamily: 'Montserrat, sans-serif',
+        toolbar: {
+          show: false,
+          autoSelected: 'zoom'
+        }
 
       },
       plotOptions: {

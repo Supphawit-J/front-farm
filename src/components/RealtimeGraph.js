@@ -40,27 +40,7 @@ function RealtimeGraph ({ status }) {
         },
         background: '#fff',
         toolbar: {
-          show: true,
-          tools: {
-            download: true,
-            selection: false,
-            zoom: false,
-            zoomin: false,
-            zoomout: false,
-            pan: false,
-            reset: false
-          },
-          export: {
-            csv: {
-              filename: undefined,
-              columnDelimiter: ',',
-              headerCategory: 'category',
-              headerValue: 'value',
-              dateFormatter (timestamp) {
-                return new Date(timestamp).toLocaleString()
-              }
-            }
-          },
+          show: false,
           autoSelected: 'zoom'
         }
       },

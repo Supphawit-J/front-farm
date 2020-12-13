@@ -184,58 +184,11 @@ function GraphDisplay () {
         <RealtimeGraph status={status1} />
         <WeeklyGraph status={status2}/>
     </DisplayTop>
-    <DipslayBottom>
-      <Display/>
-      {/* <DisplayMin>
     <DisplayBottom>
-      <DisplayMin>
-        <TitleCheck>Min</TitleCheck>
-        <NumberUnit>
-        <TitleDisplay>10</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
-        </NumberUnit>
-      </DisplayMin>
-      <DisplayMin>
-        <TitleCheck>Min</TitleCheck>
-        <NumberUnit>
-        <TitleDisplay>10</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
-        </NumberUnit>
-      </DisplayMin><DisplayMin>
-        <TitleCheck>Min</TitleCheck>
-        <NumberUnit>
-        <TitleDisplay>10</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
-        </NumberUnit>
-      </DisplayMin> */}
-      {/* <DisplayMax>
-      <TitleCheck>Max</TitleCheck>
-      <NumberUnit>
-      <TitleDisplay>20</TitleDisplay>
-      <TitleUnit>Celsius</TitleUnit>
-      </NumberUnit>
-      </DisplayMax>
-      <DisplayAvg>
-        <TitleCheck>Average</TitleCheck>
-      <NumberUnit>
-        <TitleDisplay>30</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
-      </NumberUnit>
-      </DisplayAvg> */}
-    </DipslayBottom>
-        <TitleCheck>Max</TitleCheck>
-        <NumberUnit>
-        <TitleDisplay>20</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
-        </NumberUnit>
-      </DisplayMin>
-      <DisplayMin>
-        <TitleCheck>Avg</TitleCheck>
-        <NumberUnit>
-        <TitleDisplay>15</TitleDisplay>
-        <TitleUnit>Celsius</TitleUnit>
-        </NumberUnit>
-      </DisplayMin>
+      <Display/>
+      <Display/>
+
+      <Display/>
 
     </DisplayBottom>
     </ShowCase>
