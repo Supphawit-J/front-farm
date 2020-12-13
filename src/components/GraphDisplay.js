@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Display from '../components/DisplayDataGraph/Display'
+
 import RealtimeGraph from './RealtimeGraph'
 import WeeklyGraph from './WeeklyGraph'
 const ShowCase = styled.div`
@@ -68,6 +70,60 @@ display : flex ;
 justify-content : space-between ;
 `
 
+// const DisplayMin = styled.div`
+// width : 25vw;
+// height : 20vh;
+// background-color : #404040 ;
+// border-radius : 20px ;
+// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+// display : flex ;
+// flex-direction : column ;
+// justify-content : space-evenly ;
+// `
+
+// const DisplayMax = styled.div`
+// width : 25vw;
+// height : 20vh;
+// background-color : #404040 ;
+// border-radius : 20px ;
+// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+// display : flex ;
+// flex-direction : column ;
+// justify-content : space-evenly ;
+// `
+
+// const DisplayAvg = styled.div`
+// width : 25vw;
+// height : 20vh;
+// background-color : #404040 ;
+// border-radius : 20px ;
+// box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+// display : flex ;
+// flex-direction : column ;
+// justify-content : space-evenly ;
+// `
+// const TitleCheck = styled.div`
+// color : white ;
+// font-size : 30px ;
+// margin : 0 0 0 40px ;
+// `
+// const NumberUnit = styled.div`
+// display : flex ;
+// flex-direction : row ;
+// margin : 0 40px 0 40px ;
+// align-items : center ;
+// justify-content : space-between ;
+// `
+
+// const TitleDisplay = styled.div`
+// color : white ;
+// font-size : 100px ;
+
+// `
+// const TitleUnit = styled.div`
+// color : white ;
+// font-size : 30px ;
+// `
 const DisplayMin = styled.div`
 width : 25vw;
 height : 20vh;
@@ -128,6 +184,9 @@ function GraphDisplay () {
         <RealtimeGraph status={status1} />
         <WeeklyGraph status={status2}/>
     </DisplayTop>
+    <DipslayBottom>
+      <Display/>
+      {/* <DisplayMin>
     <DisplayBottom>
       <DisplayMin>
         <TitleCheck>Min</TitleCheck>
@@ -137,6 +196,33 @@ function GraphDisplay () {
         </NumberUnit>
       </DisplayMin>
       <DisplayMin>
+        <TitleCheck>Min</TitleCheck>
+        <NumberUnit>
+        <TitleDisplay>10</TitleDisplay>
+        <TitleUnit>Celsius</TitleUnit>
+        </NumberUnit>
+      </DisplayMin><DisplayMin>
+        <TitleCheck>Min</TitleCheck>
+        <NumberUnit>
+        <TitleDisplay>10</TitleDisplay>
+        <TitleUnit>Celsius</TitleUnit>
+        </NumberUnit>
+      </DisplayMin> */}
+      {/* <DisplayMax>
+      <TitleCheck>Max</TitleCheck>
+      <NumberUnit>
+      <TitleDisplay>20</TitleDisplay>
+      <TitleUnit>Celsius</TitleUnit>
+      </NumberUnit>
+      </DisplayMax>
+      <DisplayAvg>
+        <TitleCheck>Average</TitleCheck>
+      <NumberUnit>
+        <TitleDisplay>30</TitleDisplay>
+        <TitleUnit>Celsius</TitleUnit>
+      </NumberUnit>
+      </DisplayAvg> */}
+    </DipslayBottom>
         <TitleCheck>Max</TitleCheck>
         <NumberUnit>
         <TitleDisplay>20</TitleDisplay>
