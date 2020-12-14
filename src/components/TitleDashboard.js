@@ -32,10 +32,12 @@ font-size : 20px;
 margin : 0 20px 0 0 ;
 `
 
-function TitleDashboard () {
+function TitleDashboard (props) {
   return (
     <ShowCase>
-    <TitleName>Sensor Dashboard</TitleName>
+    <TitleName>
+      <p>{props.titlename}</p>
+    </TitleName>
     <IconToggle>
     <SettingMode>Dark Mode</SettingMode>
     <ToggleOff size="40" />
