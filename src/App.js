@@ -22,4 +22,4 @@ function App () {
   )
 }
 
-export default withHelmet('ArgoGreen | CAMT DII')(App)
+export default withHelmet('ArgoGreen')(App)
