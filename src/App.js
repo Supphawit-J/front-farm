@@ -10,7 +10,11 @@ import { GenerateData } from './utils/generateData'
 function App () {
   const [{ bigData }, { useData }] = GenerateData()
   const [temp, setTemp] = useState([])
+  const [humidity, setHumidity] = useState([])
+  const [light, setLight] = useState([])
+  const [wind, setWind] = useState([])
   const [deviceData, setDeviceData] = useState([])
+  const [select, setSelect] = useState('')
   const handleData = () => {
     bigData.map(index => index)
       .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
@@ -19,17 +23,33 @@ function App () {
     deviceData.map(
       index => temp.push({ x: new Date(index.timestamp).getTime(), y: index.temp })
     )
-
-    console.log(temp)
+  }
+  const handleHumidity = () => {
+    deviceData.map(
+      index => humidity.push({ x: new Date(index.timestamp).getTime(), y: index.humidity })
+    )
+  }
+  const handleWind = () => {
+    deviceData.map(
+      index => wind.push({ x: new Date(index.timestamp).getTime(), y: index.wind })
+    )
+  }
+  const handleLight = () => {
+    deviceData.map(
+      index => light.push({ x: new Date(index.timestamp).getTime(), y: index.lux })
+    )
   }
 
   useEffect(() => {
     useData()
     handleData()
     handleTemp()
+    handleHumidity()
+    handleLight()
+    handleWind()
   }, [])
   return (
-    <DataContext.Provider value={{ temp }}>
+    <DataContext.Provider value={{ temp, wind, light, humidity, select, setSelect }}>
       <GlobalStyle/>
       <Reset/>
       <Router>
