@@ -11,7 +11,8 @@ ${reset}
   font-family: 'Poppins', sans-serif;
   font-size: 20px ; 
   scroll-behavior : smooth ;
-  background-color : #282828 ;
+  /* background-color : #282828 ; */
+  background: linear-gradient(90deg, rgba(0,90,167,1) 0%, rgba(255,253,228,1) 100%);
 }
 
 a { 
