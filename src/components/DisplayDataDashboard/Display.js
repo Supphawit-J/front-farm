@@ -5,7 +5,7 @@ const Showcase = styled.div`
 background-color : #404040 ;
 width : 38vw ;
 height : 37vh ;
-border-radius : 20px ;
+border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 cursor: pointer;
 display : flex; 
@@ -23,24 +23,27 @@ color : white ;
 font-size : 3rem ;
 padding : 0 40px 0 40px ;
 text-align : right ;
-letter-spacing: 1.5px;
+letter-spacing: 3px;
+border-radius : 1.5rem;
 `
 
 const AllData = styled.div`
 display : flex ; 
 justify-content : space-between ;
 align-items : center;
-padding : 0 40px 0 80px ;
+padding : 0 40px 0 70px ;
 `
 
 const NumberData = styled.div`
 color : white ;
-font-size : 7rem ;
+font-size : 8rem ;
+letter-spacing: 2px;
 `
 
 const UnitData = styled.div`
 color : white ;
 font-size : 3rem ;
+letter-spacing: 2px;
 `
 
 function Display (props) {
