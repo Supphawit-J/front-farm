@@ -5,7 +5,7 @@ const DisplayMin = styled.div`
 width : 25vw;
 height : 20vh;
 background-color : #404040 ;
-border-radius : 20px ;
+border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ; 
 flex-direction : column ;
@@ -13,25 +13,25 @@ justify-content : space-evenly ;
 `
 const TitleCheck = styled.div`
 color : white ;
-font-size : 30px ;
-margin : 0 0 0 40px ;
+font-size : 3rem ;
+margin : 0 0 0 30px ;
 `
 const NumberUnit = styled.div`
 display : flex ;
 flex-direction : row ;
-margin : 0 40px 0 40px ;
+margin : 0 30px 0 30px ;
 align-items : center ;
 justify-content : space-between ;
 `
 
 const TitleDisplay = styled.div`
 color : white ;
-font-size : 100px ;
+font-size : 5rem ;
 
 `
 const TitleUnit = styled.div`
 color : white ;
-font-size : 30px ;
+font-size : 2rem ;
 `
 
 function Display (props) {
