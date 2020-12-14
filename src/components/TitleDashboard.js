@@ -14,10 +14,16 @@ margin : 40px 0 0 0 ;
 
 const TitleName = styled.div`
 align-items : center ;
-font-size : 65px ;
+font-size : 4rem;
 color : #ffffff ;
 margin : 0 0 0 35px ;
 cursor: pointer;
+transition: 0.5s;
+&:hover{
+  color : #F1B24A ;
+  transition: 0.5s;
+  opacity: 1;
+}
 `
 const IconToggle = styled.div`
 color : #ffffff;
