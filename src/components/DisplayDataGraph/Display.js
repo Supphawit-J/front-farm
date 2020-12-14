@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const DisplayMin = styled.div`
 width : 25vw;
 height : 20vh;
-background-color : #404040 ;
+background-color : #4D774E ;
 border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ; 
