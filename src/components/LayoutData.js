@@ -33,7 +33,6 @@ height : 83vh;
 
 function LayoutData () {
   return (
-  <>
       <Showcase>
         <ContentLeft>
           <MenuType/>
@@ -47,7 +46,6 @@ function LayoutData () {
           </DisplayDashboard>
         </ContentRight>
       </Showcase>
-  </>
   )
 }
 export default LayoutData
