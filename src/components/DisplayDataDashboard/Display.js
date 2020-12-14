@@ -2,11 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Showcase = styled.div`
-background-color : #404040 ;
 width : 38vw ;
 height : 37vh ;
-border-radius : 1.5rem;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
+/* background-color : #404040 ; */
+/* border-radius : 1.5rem;
+box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32); */
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
 cursor: pointer;
 display : flex; 
 flex-direction : column ;
