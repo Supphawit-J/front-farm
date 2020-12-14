@@ -17,7 +17,7 @@ const DisplayTop = styled.div`
 width : 78vw;
 height : 55vh ;
 background-color : #fff ;
-border-radius : 2rem ;
+border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ;
 align-items : center ;
