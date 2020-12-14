@@ -15,10 +15,14 @@ flex-direction :column ;
 justify-content :space-around ;
 height :95vh;
 width : 16vw;
-background-color : #404040;
+/* background-color : #404040;
 border-radius : 1.5rem;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
-
+box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32); */
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
 `
 const MenuLogo = styled.div`
 text-align :center;
