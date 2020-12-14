@@ -8,7 +8,7 @@ import { DataContext } from './context/DataContext'
 import { GenerateData } from './utils/generateData'
 
 function App () {
-  const [{ bigData }, { useData }] = GenerateData()
+  const [{ bigData }, { useData, handleUpdate, clearData }] = GenerateData()
   const [temp, setTemp] = useState([])
   const [humidity, setHumidity] = useState([])
   const [light, setLight] = useState([])
@@ -39,14 +39,24 @@ function App () {
       index => light.push({ x: new Date(index.timestamp).getTime(), y: index.lux })
     )
   }
+  const CronJob = require('cron').CronJob
+
+  const job = new CronJob('*/1 * * * * *', function () {
+    if (bigData.length < 288) {
+      handleUpdate()
+      handleData()
+      handleTemp()
+      handleHumidity()
+      handleLight()
+      handleWind()
+      // console.log(bigData)
+    } else {
+      clearData()
+    }
+  })
 
   useEffect(() => {
-    useData()
-    handleData()
-    handleTemp()
-    handleHumidity()
-    handleLight()
-    handleWind()
+    job.start()
   }, [])
   return (
     <DataContext.Provider value={{ temp, wind, light, humidity, select, setSelect }}>

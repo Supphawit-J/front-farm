@@ -36,7 +36,7 @@ export function GenerateData () {
 
   async function handleUpdate () {
     bigData.push({
-      device_id: 'DFG615',
+      device_id: 'D1',
       device_status: 'on',
       temp: Math.floor(Math.random() * (30 - 25) + 25),
       humidity: Math.floor(Math.random() * (30 - 25) + 25),
