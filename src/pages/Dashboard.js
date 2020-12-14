@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import LayoutDashboard from '../components/LayoutDashboard'
+import { GenerateData } from '../utils/generateData'
 
 import { Actioncontext } from '../context/Actioncontext'
 
 function Dashboard () {
+  const [{ bigData }, { useData, handleUpdate }] = GenerateData()
+
+  const CronJob = require('cron').CronJob
+
+  const job = new CronJob('* * * * * *', function () {
+    if (bigData.length < 12) {
+      handleUpdate()
+    } else {
+      // clearData()
+      // handleUpdate()
+      console.log(bigData.map(index => index).filter(fil => fil.device_id === 'D5').map(humi => ({ x: new Date(humi.timestamp).getTime(), y: humi.humidity })))
+      job.stop()
+    }
+  })
+
+  useEffect(() => {
+    useData()
+    job.start()
+  }, [])
   return (
     <Actioncontext.Provider
       value={{
