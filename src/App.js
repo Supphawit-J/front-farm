@@ -16,32 +16,40 @@ function App () {
   const [deviceData, setDeviceData] = useState([])
   const [select, setSelect] = useState('')
   const handleData = () => {
+    setDeviceData(deviceData.splice(0, deviceData.length))
     bigData.map(index => index)
       .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
   }
   const handleTemp = () => {
+    setTemp(temp.splice(0, temp.length))
+
     deviceData.map(
       index => temp.push({ x: new Date(index.timestamp).getTime(), y: index.temp })
     )
   }
   const handleHumidity = () => {
+    setHumidity(humidity.splice(0, humidity.length))
+
     deviceData.map(
       index => humidity.push({ x: new Date(index.timestamp).getTime(), y: index.humidity })
     )
   }
   const handleWind = () => {
+    setWind(wind.splice(0, wind.length))
+
     deviceData.map(
       index => wind.push({ x: new Date(index.timestamp).getTime(), y: index.wind })
     )
   }
   const handleLight = () => {
+    setLight(light.splice(0, light.length))
     deviceData.map(
       index => light.push({ x: new Date(index.timestamp).getTime(), y: index.lux })
     )
   }
   const CronJob = require('cron').CronJob
 
-  const job = new CronJob('*/1 * * * * *', function () {
+  const job = new CronJob('*/5 * * * * *', function () {
     if (bigData.length < 288) {
       handleUpdate()
       handleData()
