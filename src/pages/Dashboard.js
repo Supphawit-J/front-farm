@@ -5,7 +5,7 @@ import { GenerateData } from '../utils/generateData'
 import { Actioncontext } from '../context/Actioncontext'
 
 function Dashboard () {
-  const [{ bigData }, { useData, handleUpdate }] = GenerateData()
+  const [{ bigData }, { handleUpdate, useData7day }] = GenerateData()
 
   const CronJob = require('cron').CronJob
 
@@ -15,13 +15,14 @@ function Dashboard () {
     } else {
       // clearData()
       // handleUpdate()
-      console.log(bigData.map(index => index).filter(fil => fil.device_id === 'D5').map(humi => ({ x: new Date(humi.timestamp).getTime(), y: humi.humidity })))
+      // console.log(bigData.map(index => index).filter(fil => fil.device_id === 'D5').map(humi => ({ x: new Date(humi.timestamp).getTime(), y: humi.humidity })))
       job.stop()
     }
   })
 
   useEffect(() => {
-    useData()
+    // useData()
+    useData7day()
     job.start()
   }, [])
   return (
