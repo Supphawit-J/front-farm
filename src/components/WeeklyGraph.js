@@ -118,7 +118,6 @@ function WeeklyGraph ({ status }) {
   useEffect(() => {
     handleAvg()
   }, [])
-  console.log(status)
   return (
     <GraphContainer style={{ display: status === true ? 'block' : 'none' }}>
 

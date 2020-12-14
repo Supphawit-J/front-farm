@@ -39,12 +39,6 @@ align-items : center;
 padding : 0 40px 0 70px ;
 `
 
-const NumberData = styled.div`
-color : white ;
-font-size : 8rem ;
-letter-spacing: 2px;
-`
-
 const UnitData = styled.div`
 color : white ;
 font-size : 3rem ;
@@ -52,6 +46,11 @@ letter-spacing: 2px;
 `
 
 function Display (props) {
+  const NumberData = styled.div`
+  color : ${props.titlenumber >= 27 ? 'red' : 'white'} ;
+  font-size : 8rem ;
+  letter-spacing: 2px;
+  `
   return (
     <>
     <Showcase>
