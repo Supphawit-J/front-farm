@@ -23,7 +23,21 @@ function RealtimeGraph ({ status }) {
   //   bigData.push({ y: Math.floor((25 - (i * 0.05))), x: (time.setMinutes(time.getMinutes() + 5)) })
   // }
 
-  const { temp } = useContext(DataContext)
+  const { temp, wind, light, humidity, select } = useContext(DataContext)
+
+  function switchData () {
+    switch (select) {
+      case 'temp' :
+        return temp
+      case 'wind' :
+        return wind
+      case 'light':
+        return light
+      case 'humidity':
+        return humidity
+      default:
+    }
+  }
 
   // chart
   const chartSet = {
@@ -46,7 +60,7 @@ function RealtimeGraph ({ status }) {
       dataLabels: {
         enabled: false
       },
-      colors: ['#00A6F3'],
+      colors: select === 'temp' ? ['#00B'] : select === 'wind' ? ['#FF2'] : select === 'humidity' ? ['#DC143C'] : select === 'light' ? ['#F92'] : ['#000'],
       xaxis: {
         type: 'datetime',
         min: (temp.map(index => index.x))[0],
@@ -82,8 +96,8 @@ function RealtimeGraph ({ status }) {
         },
       series:
         [{
-          name: 'data1',
-          data: temp
+          name: select,
+          data: switchData()
         }],
       tooltip: {
         enabled: true,
@@ -147,8 +161,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (temp.map(index => index.x))[temp.length - 6],
-          (temp.map(index => index.x))[temp.length - 1]
+          (switchData().map(index => index.x))[switchData().length - 6],
+          (switchData().map(index => index.x))[switchData().length - 1]
         )
 
         break
@@ -156,8 +170,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (temp.map(index => index.x))[temp.length - 12],
-          (temp.map(index => index.x))[temp.length - 1]
+          (switchData().map(index => index.x))[switchData().length - 12],
+          (switchData().map(index => index.x))[switchData().length - 1]
         )
 
         break
@@ -165,8 +179,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (temp.map(index => index.x))[temp.length - 74],
-          (temp.map(index => index.x))[temp.length - 1]
+          (switchData().map(index => index.x))[switchData().length - 74],
+          (switchData().map(index => index.x))[switchData().length - 1]
         )
 
         break
@@ -174,8 +188,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (temp.map(index => index.x))[temp.length - 144],
-          (temp.map(index => index.x))[temp.length - 1]
+          (switchData().map(index => index.x))[switchData().length - 144],
+          (switchData().map(index => index.x))[switchData().length - 1]
         )
 
         break
@@ -183,8 +197,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (temp.map(index => index.x))[temp.length - 288],
-          (temp.map(index => index.x))[temp.length - 1]
+          (switchData().map(index => index.x))[switchData().length - 288],
+          (switchData().map(index => index.x))[switchData().length - 1]
         )
 
         break
