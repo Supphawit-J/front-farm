@@ -11,12 +11,19 @@ cursor: pointer;
 display : flex; 
 flex-direction : column ;
 justify-content : space-around ;
+transition: 0.5s;
+&:hover{
+  background-color : #F1B24A ;
+  transition: 0.5s;
+  opacity: 1;
+}
 `
 const TitleData = styled.div`
 color : white ;
-font-size : 40px ;
+font-size : 3rem ;
 padding : 0 40px 0 40px ;
 text-align : right ;
+letter-spacing: 1.5px;
 `
 
 const AllData = styled.div`
@@ -28,12 +35,12 @@ padding : 0 40px 0 80px ;
 
 const NumberData = styled.div`
 color : white ;
-font-size : 150px ;
+font-size : 7rem ;
 `
 
 const UnitData = styled.div`
 color : white ;
-font-size : 30px ;
+font-size : 3rem ;
 `
 
 function Display (props) {
