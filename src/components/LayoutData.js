@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import MenuType from './MenuType'
 import TitleDashboard from '../components/TitleDashboard'
 import GraphDisplay from '../components/GraphDisplay'
+import { Actioncontext } from '../context/Actioncontext'
 
 const Showcase = styled.div`
   display : flex ;
@@ -32,6 +33,7 @@ height : 83vh;
 `
 
 function LayoutData () {
+  const { titlename } = useContext(Actioncontext)
   return (
       <Showcase>
         <ContentLeft>
@@ -39,7 +41,9 @@ function LayoutData () {
         </ContentLeft>
         <ContentRight>
           <TitleBar>
-            <TitleDashboard/>
+            <TitleDashboard
+            titlename={ titlename }
+            />
           </TitleBar>
           <DisplayDashboard>
             <GraphDisplay/>
