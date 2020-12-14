@@ -10,7 +10,7 @@ export function GenerateData () {
   async function useData () {
     for (let i = 0; i < 288; i++) {
       setBigdata(bigData.push({
-        device_id: 'D5',
+        device_id: 'D1',
         device_status: 'on',
         temp: Math.floor(Math.random() * (30 - 25) + 25),
         humidity: Math.floor(Math.random() * (30 - 25) + 25),
@@ -56,7 +56,7 @@ export function GenerateData () {
     for (let l = 1; l <= 7; l++) {
       for (let j = 1; j <= 3; j++) {
         device.push({
-          device_id: 'A' + j,
+          device_id: 'D' + j,
           temperature: [
             {
               device_id: 1,
