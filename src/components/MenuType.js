@@ -43,8 +43,8 @@ transition: 0.5s;
 &:hover{
   color : #F1B24A ;
   transition: 0.5s;
+  }
 `
-
 const MenuLayout = styled.div`
 text-align :center;
 `
