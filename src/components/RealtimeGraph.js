@@ -13,7 +13,6 @@ import { DataContext } from '../context/DataContext'
 /* global alert */
 function RealtimeGraph ({ status }) {
   // data
-  const [info, setInfo] = useState([])
   // const time = new Date()
   // const bigData = []
   // for (let i = 0; i < 144; i++) {
@@ -84,12 +83,11 @@ function RealtimeGraph ({ status }) {
             }
           },
           title: {
-            text: 'Series A',
+            text: select,
             style: {
               color: '#000'
             }
           },
-          min: 0,
 
           // max: Math.max(...[...new Set(temp.map(index => index.y))]) + 10,
           tickAmount: 6
@@ -112,7 +110,7 @@ function RealtimeGraph ({ status }) {
       annotations: {
         yaxis: [
           {
-            y: 20,
+            y: select === 'temp' ? 30 : select === 'wind' ? 8 : select === 'humidity' ? 80 : select === 'light' ? 300 : 0,
             width: '100%',
             borderColor: '#EA0000',
             label: {
@@ -121,7 +119,7 @@ function RealtimeGraph ({ status }) {
                 color: '#fff',
                 background: '#EA0000'
               },
-              text: 'Y-axis annotation on 20'
+              text: 'Risk point'
             }
           }
         ]
@@ -215,10 +213,6 @@ function RealtimeGraph ({ status }) {
       default:
     }
   }
-  const handleTime = () => {
-    setInfo(temp.map(index => temp.push(index)))
-    console.log(temp)
-  }
 
   function updateSeries () {
     chartSet.options.series[0] = { name: 'data2', data: temp }
@@ -261,8 +255,8 @@ function RealtimeGraph ({ status }) {
   ]
 
   useEffect(() => {
-    updateSeries()
-  }, [temp])
+    updateData('six_hour')
+  }, [])
 
   // style
   const theme = createMuiTheme({
