@@ -15,7 +15,7 @@ justify-content :space-around ;
 height :95vh;
 width : 16vw;
 background-color : #404040;
-border-radius : 20px;
+border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 
 `
@@ -27,32 +27,33 @@ margin : 30px 0 0 0 ;
 display : flex ;
 justify-content : space-between;
 align-items : center ;
-border-radius : 30px ;
 `
-const MainLogo = styled.div`
+const TitleLogo = styled.div`
 display : flex ;
 justify-content : center;
 align-items : center;
 color : #ffffff;
-font-size : 30px;
-padding : 0 10px 0 0 ;
+font-size : 2rem;
+letter-spacing: 1px;
 `
 const MainIcon = styled.div`
 padding : 0 0 0 10px ;
 color : white ;
+transition: 0.5s;
+&:hover{
+  color : #F1B24A ;
+  transition: 0.5s;
 `
 
 const MenuLayout = styled.div`
 text-align :center;
 `
 const LogoIcon = styled.div`
-padding : 0 0 0 20px ;
+padding : 0 0 0 10px ;
 color : white ;
 `
 
 const ListLogo = styled.div`
-background-color : #F1B24A;
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 border-radius : 20px ;
 display : flex ;
 justify-content : space-between;
@@ -61,11 +62,22 @@ align-items : center;
 width : 14vw;
 height : 4vw ;
 color : white ;
+transition: 0.5s;
+&:hover{
+  color : #F1B24A ;
+  transition: 0.5s;
+}
 `
 
 const MenuList = styled.div`
-padding : 0 20px 0 0 ;
-font-size : 22px ;
+padding : 0 10px 0 0 ;
+font-size : 1.5rem ;
+letter-spacing: 1px;
+transition: 0.5s;
+&:hover{
+  color : #F1B24A ;
+  transition: 0.5s;
+}
 `
 
 function MenuType () {
@@ -76,14 +88,14 @@ function MenuType () {
         <MainIcon>
         <Gumtree size="50"/>
         </MainIcon>
-        <MainLogo>ArgoGreen</MainLogo>
+        <TitleLogo>ArgoGreen</TitleLogo>
       </MenuLogo>
       </Link>
       <MenuLayout>
         <Link to='/'>
         <ListLogo>
         <LogoIcon>
-        <Dashboard size="35" />
+        <Dashboard size="45" />
         </LogoIcon>
         <MenuList>Dashboard</MenuList>
         </ListLogo>
@@ -92,7 +104,7 @@ function MenuType () {
         <Link to='/temperature'>
         <ListLogo>
         <LogoIcon>
-        <TemperatureHigh size="35"/>
+        <TemperatureHigh size="45"/>
         </LogoIcon>
         <MenuList>Temperature</MenuList>
         </ListLogo>
@@ -101,7 +113,7 @@ function MenuType () {
         <Link to='/wind'>
         <ListLogo>
         <LogoIcon>
-        <Wind size = "35"/>
+        <Wind size = "45"/>
         </LogoIcon>
         <MenuList>Wind Speed</MenuList>
         </ListLogo>
@@ -110,7 +122,7 @@ function MenuType () {
         <Link to='/humidity'>
         <ListLogo>
         <LogoIcon>
-        <Water size ="35"/>
+        <Water size ="45"/>
         </LogoIcon>
         <MenuList>Humidity</MenuList>
         </ListLogo>
@@ -119,7 +131,7 @@ function MenuType () {
         <Link to='/light'>
         <ListLogo>
         <LogoIcon>
-        <Sun size ="35"/>
+        <Sun size ="45"/>
         </LogoIcon>
         <MenuList>Light</MenuList>
         </ListLogo>
