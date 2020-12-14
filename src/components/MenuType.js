@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Dashboard } from '@styled-icons/boxicons-solid/Dashboard'
 import { TemperatureHigh } from '@styled-icons/fa-solid/TemperatureHigh'
@@ -7,6 +7,7 @@ import { Water } from '@styled-icons/ionicons-outline/Water'
 import { Sun } from '@styled-icons/boxicons-regular/Sun'
 import { Gumtree } from '@styled-icons/simple-icons/Gumtree'
 import { Link } from 'react-router-dom'
+import { DataContext } from '../context/DataContext'
 
 const ShowCase = styled.div`
 display :grid ; 
@@ -84,6 +85,12 @@ letter-spacing: 1px;
 `
 
 function MenuType () {
+  const { setSelect } = useContext(DataContext)
+
+  const handleSelect = (choice) => {
+    setSelect(choice)
+  }
+
   return (
     <ShowCase>
       <Link to='/'>
@@ -104,7 +111,7 @@ function MenuType () {
         </ListLogo>
         </Link>
 
-        <Link to='/temperature'>
+        <Link to='/temperature' onClick={() => handleSelect('temp')}>
         <ListLogo>
         <LogoIcon>
         <TemperatureHigh size="45"/>
@@ -113,7 +120,7 @@ function MenuType () {
         </ListLogo>
         </Link>
 
-        <Link to='/wind'>
+        <Link to='/wind' onClick={() => handleSelect('wind')}>
         <ListLogo>
         <LogoIcon>
         <Wind size = "45"/>
@@ -122,7 +129,7 @@ function MenuType () {
         </ListLogo>
         </Link>
 
-        <Link to='/humidity'>
+        <Link to='/humidity' onClick={() => handleSelect('humidity')}>
         <ListLogo>
         <LogoIcon>
         <Water size ="45"/>
@@ -131,7 +138,7 @@ function MenuType () {
         </ListLogo>
         </Link>
 
-        <Link to='/light'>
+        <Link to='/light' onClick={() => handleSelect('light')}>
         <ListLogo>
         <LogoIcon>
         <Sun size ="45"/>
