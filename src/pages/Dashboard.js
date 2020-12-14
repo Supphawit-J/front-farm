@@ -32,7 +32,7 @@ function Dashboard () {
           titlename: 'Temperature Dashboard',
           titledata: 'Temperature',
           titlenumber: '10',
-          titleunit: 'Celsius / °C'
+          titleunit: 'Celsius ( °C )'
         },
         wind: {
           titlename: 'Wind Dashboard',
@@ -44,7 +44,7 @@ function Dashboard () {
           titlename: 'Humidity Dashboard',
           titledata: 'Humidity',
           titlenumber: '30',
-          titleunit: 'Percent / %'
+          titleunit: 'Percent ( % )'
         },
         light: {
           titelname: 'Light Dashboard',

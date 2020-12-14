@@ -7,7 +7,7 @@ function Temperature () {
   return (
     <Actioncontext.Provider
       value={{
-        titlename: 'Temperature Dashboard' ,
+        titlename: 'Temperature Dashboard',
         min: {
           titlecheck: 'Min',
           titledisplay: '10',
