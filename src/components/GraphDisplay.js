@@ -17,7 +17,7 @@ const DisplayTop = styled.div`
 width : 78vw;
 height : 55vh ;
 background-color : #fff ;
-border-radius : 2rem ;
+border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 display : flex ;
 align-items : center ;
@@ -34,7 +34,7 @@ margin: .8rem 10rem .2rem 0rem;
 `
 
 const GraphMenu = styled.button`
-font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
 font-size : 1rem ;
 color : #000 ;
 text-decoration: none;

@@ -5,8 +5,26 @@ import { Actioncontext } from '../context/Actioncontext'
 
 function Humidity () {
   return (
-    <Actioncontext.Provider value = { { min: { titlecheck: 'Min', titledisplay: '10', unitcheck: 'Percent / %' }, max: { titlecheck: 'Max', titledisplay: '20', unitcheck: 'Percent / %' }, avg: { titlecheck: 'Average', titledisplay: '35', unitcheck: 'Percent / %' } } }>
-    <LayoutData/>
+    <Actioncontext.Provider
+      value={{
+        titlename: 'Humidity Dashboard',
+        min: {
+          titlecheck: 'Min',
+          titledisplay: '10',
+          unitcheck: 'Percent / %'
+        },
+        max: {
+          titlecheck: 'Max',
+          titledisplay: '20',
+          unitcheck: 'Percent / %'
+        },
+        avg: {
+          titlecheck: 'Average',
+          titledisplay: '35',
+          unitcheck: 'Percent / %'
+        }
+      }}>
+      <LayoutData />
     </Actioncontext.Provider>
   )
 }

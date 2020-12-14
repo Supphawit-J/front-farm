@@ -34,7 +34,7 @@ function RealtimeGraph ({ status }) {
         width: '100%',
         height: '85%',
         type: 'area',
-        fontFamily: 'Montserrat, sans-serif',
+        fontFamily: 'Poppins, sans-serif',
         zoom: {
           autoScaleYaxis: true
         },
@@ -259,7 +259,7 @@ function RealtimeGraph ({ status }) {
       TimePicker
     },
     typography: {
-      fontFamily: 'Montserrat, sans-serif'
+      fontFamily: 'Poppins, sans-serif'
     }
   })
 

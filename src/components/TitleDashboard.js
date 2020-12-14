@@ -14,10 +14,17 @@ margin : 40px 0 0 0 ;
 
 const TitleName = styled.div`
 align-items : center ;
-font-size : 65px ;
+font-size : 4rem;
+letter-spacing: 5px;
 color : #ffffff ;
 margin : 0 0 0 35px ;
 cursor: pointer;
+transition: 0.5s;
+&:hover{
+  color : #F1B24A ;
+  transition: 0.5s;
+  opacity: 1;
+}
 `
 const IconToggle = styled.div`
 color : #ffffff;
@@ -32,10 +39,12 @@ font-size : 20px;
 margin : 0 20px 0 0 ;
 `
 
-function TitleDashboard () {
+function TitleDashboard (props) {
   return (
     <ShowCase>
-    <TitleName>Sensor Dashboard</TitleName>
+    <TitleName>
+      <p>{props.titlename}</p>
+    </TitleName>
     <IconToggle>
     <SettingMode>Dark Mode</SettingMode>
     <ToggleOff size="40" />

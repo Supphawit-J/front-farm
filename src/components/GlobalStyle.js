@@ -7,7 +7,8 @@ ${reset}
  html , body , #root {
   height : 100vh ;
   width: 100vw;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Poppins', sans-serif;
   font-size: 20px ; 
   scroll-behavior : smooth ;
   background-color : #282828 ;

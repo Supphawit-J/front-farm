@@ -12,10 +12,10 @@ export function GenerateData () {
       setBigdata(bigData.push({
         device_id: 'D5',
         device_status: 'on',
-        temp: Math.floor((i - (0.9 * i)) + 15 - (0.03 * i)),
-        humidity: Math.floor(Math.random() * 100) + 40,
-        wind: Math.floor(Math.random() * 10),
-        lux: Math.floor(Math.random() * 400) + 50,
+        temp: Math.floor(Math.random() * (30 - 25) + 25),
+        humidity: Math.floor(Math.random() * (30 - 25) + 25),
+        wind: Math.floor(Math.random() * (30 - 25) + 25),
+        lux: Math.floor(Math.random() * (30 - 25) + 25),
         timestamp: new Date(time.setMinutes(time.getMinutes() + 5))
       }))
       // console.log(bigData[bigData.length - 1])

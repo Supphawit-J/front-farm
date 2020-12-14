@@ -5,35 +5,45 @@ const Showcase = styled.div`
 background-color : #404040 ;
 width : 38vw ;
 height : 37vh ;
-border-radius : 20px ;
+border-radius : 1.5rem;
 box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.32);
 cursor: pointer;
 display : flex; 
 flex-direction : column ;
 justify-content : space-around ;
+transition: 0.5s;
+&:hover{
+  background-color : #F1B24A ;
+  transition: 0.5s;
+  opacity: 1;
+}
 `
 const TitleData = styled.div`
 color : white ;
-font-size : 40px ;
+font-size : 3rem ;
 padding : 0 40px 0 40px ;
 text-align : right ;
+letter-spacing: 3px;
+border-radius : 1.5rem;
 `
 
 const AllData = styled.div`
 display : flex ; 
 justify-content : space-between ;
 align-items : center;
-padding : 0 40px 0 80px ;
+padding : 0 40px 0 70px ;
 `
 
 const NumberData = styled.div`
 color : white ;
-font-size : 150px ;
+font-size : 8rem ;
+letter-spacing: 2px;
 `
 
 const UnitData = styled.div`
 color : white ;
-font-size : 30px ;
+font-size : 3rem ;
+letter-spacing: 2px;
 `
 
 function Display (props) {
