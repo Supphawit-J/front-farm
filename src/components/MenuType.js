@@ -27,6 +27,8 @@ margin : 30px 0 0 0 ;
 display : flex ;
 justify-content : space-between;
 align-items : center ;
+color : white ;
+transition: 0.5s;
 `
 const TitleLogo = styled.div`
 display : flex ;
@@ -34,7 +36,11 @@ justify-content : center;
 align-items : center;
 color : #ffffff;
 font-size : 2rem;
-letter-spacing: 1px;
+letter-spacing: 2.5px;
+&:hover{
+  color : #F1B24A ;
+  transition: 0.5s;
+}
 `
 const MainIcon = styled.div`
 padding : 0 0 0 10px ;
@@ -43,14 +49,13 @@ transition: 0.5s;
 &:hover{
   color : #F1B24A ;
   transition: 0.5s;
-  }
+}
 `
 const MenuLayout = styled.div`
 text-align :center;
 `
 const LogoIcon = styled.div`
 padding : 0 0 0 10px ;
-color : white ;
 `
 
 const ListLogo = styled.div`
@@ -71,12 +76,10 @@ transition: 0.5s;
 
 const MenuList = styled.div`
 padding : 0 10px 0 0 ;
-font-size : 1.5rem ;
+font-size : 1.6rem ;
 letter-spacing: 1px;
-transition: 0.5s;
 &:hover{
   color : #F1B24A ;
-  transition: 0.5s;
 }
 `
 

@@ -7,7 +7,7 @@ function Light () {
   return (
     <Actioncontext.Provider
       value={{
-        light: { titlename: 'Light Dasboard' },
+        titlename: 'Light Dasboard',
         min: { titlecheck: 'Min', titledisplay: '10', unitcheck: 'Lux' },
         max: { titlecheck: 'Max', titledisplay: '20', unitcheck: 'Lux' },
         avg: { titlecheck: 'Average', titledisplay: '35', unitcheck: 'Lux' }

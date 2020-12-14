@@ -7,7 +7,7 @@ function Humidity () {
   return (
     <Actioncontext.Provider
       value={{
-        humi: { titlename: 'Humidity Dashbiard' },
+        titlename: 'Humidity Dashboard',
         min: {
           titlecheck: 'Min',
           titledisplay: '10',
