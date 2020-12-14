@@ -64,7 +64,6 @@ function App () {
   })
 
   useEffect(() => {
-    job.start()
   }, [])
   return (
     <DataContext.Provider value={{ temp, wind, light, humidity, select, setSelect }}>
