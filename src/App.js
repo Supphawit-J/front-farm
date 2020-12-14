@@ -16,10 +16,13 @@ function App () {
   const [deviceData, setDeviceData] = useState([])
   const [select, setSelect] = useState('')
   const handleData = () => {
+    setDeviceData(deviceData.splice(0, deviceData.length))
     bigData.map(index => index)
       .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
   }
   const handleTemp = () => {
+    setTemp(temp.splice(0, temp.length))
+
     deviceData.map(
       index => temp.push({ x: new Date(index.timestamp).getTime(), y: index.temp })
     )
