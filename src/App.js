@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState, useContext } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Reset } from 'styled-reset'
 import withHelmet from './utils/withHelmet'
@@ -12,16 +12,15 @@ function App () {
   const [temp, setTemp] = useState([])
   const [deviceData, setDeviceData] = useState([])
   const handleData = () => {
-    deviceData.push(
-      bigData.map(index => index)
-        .filter(device => device.device_id === 'D1'))
+    bigData.map(index => index)
+      .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
   }
   const handleTemp = () => {
-    temp.push(
-      deviceData.map(
-        index => ({ x: new Date(index.timestamp).getTime(), y: index.temp })
-      )
+    deviceData.map(
+      index => temp.push({ x: new Date(index.timestamp).getTime(), y: index.temp })
     )
+
+    console.log(temp)
   }
 
   useEffect(() => {
@@ -29,7 +28,6 @@ function App () {
     handleData()
     handleTemp()
   }, [])
-
   return (
     <DataContext.Provider value={{ temp }}>
       <GlobalStyle/>
