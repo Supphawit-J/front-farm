@@ -1,53 +1,57 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import MenuType from './MenuType'
 import TitleDashboard from '../components/TitleDashboard'
 import DataDisplay from '../components/DataDisplay'
+import { Actioncontext } from '../context/Actioncontext'
 
 const Showcase = styled.div`
-  display : flex ;
+  display: flex;
 `
 const ContentLeft = styled.div`
-height : 100vh;
-width : 20vw;
-display : flex;
-justify-content : center;
-align-items : center;
+  height: 100vh;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const ContentRight = styled.div`
-height : 100vh;
-width : 80vw ;
-display : flex ;
-flex-direction : column ;
+  height: 100vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
 `
 const TitleBar = styled.div`
-width : 80vw;
-height : 15vh;
+  width: 80vw;
+  height: 15vh;
 `
 
 const DisplayDashboard = styled.div`
-width : 80vw;
-height : 83vh;
+  width: 80vw;
+  height: 83vh;
 `
 
 function LayoutDashboard () {
+  const { dashboard } = useContext(Actioncontext)
   return (
-  <>
+    <>
       <Showcase>
         <ContentLeft>
-          <MenuType/>
+          <MenuType />
         </ContentLeft>
         <ContentRight>
           <TitleBar>
-            <TitleDashboard/>
+            <TitleDashboard
+              titlename={ dashboard.titlename }
+            />
           </TitleBar>
           <DisplayDashboard>
-            <DataDisplay/>
+            <DataDisplay />
           </DisplayDashboard>
         </ContentRight>
       </Showcase>
-  </>
+    </>
   )
 }
 export default LayoutDashboard
