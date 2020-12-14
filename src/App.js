@@ -31,7 +31,7 @@ function App () {
   }, [])
 
   return (
-    <DataContext.Provider>
+    <DataContext.Provider value={{ temp }}>
       <GlobalStyle/>
       <Reset/>
       <Router>
