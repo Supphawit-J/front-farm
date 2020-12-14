@@ -50,7 +50,7 @@ export function GenerateData () {
     setBigdata(bigData.splice(0, bigData.length))
     console.log(bigData.length)
   }
-  async function useData7day () {
+  async function weekData () {
     const device = []
 
     for (let l = 1; l <= 7; l++) {
@@ -73,7 +73,7 @@ export function GenerateData () {
               avg: Math.floor((Math.random() * (10 - 5)) + 5)
             }
           ],
-          windvelocity: [
+          wind_velocity: [
             {
               device_id: 1,
               max: Math.floor((Math.random() * (10 - 5)) + 5),
@@ -81,7 +81,7 @@ export function GenerateData () {
               avg: Math.floor((Math.random() * (10 - 5)) + 5)
             }
           ],
-          pressure: [
+          sun_lux: [
             {
               device_id: 1,
               max: Math.floor((Math.random() * (10 - 5)) + 5),
@@ -108,36 +108,35 @@ export function GenerateData () {
           data: bigData
         },
         dataInOneWeek: {
-          data: [{
-            dataOn1stDay: [{
+          data: {
+            dataOn1stDay: {
               device: device.slice(0, 3)
-            }],
-            dataOn2stDay: [{
+            },
+            dataOn2stDay: {
               device: device.slice(3, 6)
-            }],
-            dataOn3stDay: [{
+            },
+            dataOn3stDay: {
               device: device.slice(6, 9)
-            }],
-            dataOn4stDay: [{
+            },
+            dataOn4stDay: {
               device: device.slice(9, 12)
-            }],
-            dataOn5stDay: [{
+            },
+            dataOn5stDay: {
               device: device.slice(12, 15)
-            }],
-            dataOn6stDay: [{
+            },
+            dataOn6stDay: {
               device: device.slice(15, 18)
-            }],
-            dataOn7stDay: [{
+            },
+            dataOn7stDay: {
               device: device.slice(18, 21)
-            }]
-          }]
+            }
+          }
         }
       }
     }))
-    console.log(bigData2)
   }
 
-  return [{ bigData, bigData2 }, { useData, handleUpdate, clearData, useData7day }]
+  return [{ bigData, bigData2 }, { useData, handleUpdate, clearData, weekData }]
 }
 
 // const time2 = new Date()
