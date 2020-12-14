@@ -1,5 +1,5 @@
 import 'date-fns'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Chart from 'react-apexcharts'
 import ApexCharts from 'apexcharts'
 import { styled, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
@@ -9,22 +9,21 @@ import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import { MuiPickersUtilsProvider, TimePicker } from '@material-ui/pickers'
 import Container from '@material-ui/core/Container'
-
+import { DataContext } from '../context/DataContext'
 /* global alert */
 function RealtimeGraph ({ status }) {
   // data
   const [info, setInfo] = useState([])
-  const time = new Date()
-  const bigData = []
-  for (let i = 0; i < 144; i++) {
-    bigData.push({ y: Math.floor((i - (0.9 * i)) + 15 - (0.03 * i)), x: (time.setMinutes(time.getMinutes() + 5)) })
-  }
-  for (let i = 0; i < 144; i++) {
-    bigData.push({ y: Math.floor((25 - (i * 0.05))), x: (time.setMinutes(time.getMinutes() + 5)) })
-  }
-  const handleTime = () => {
-    setInfo(bigData.map(index => index))
-  }
+  // const time = new Date()
+  // const bigData = []
+  // for (let i = 0; i < 144; i++) {
+  //   bigData.push({ y: Math.floor((i - (0.9 * i)) + 15 - (0.03 * i)), x: (time.setMinutes(time.getMinutes() + 5)) })
+  // }
+  // for (let i = 0; i < 144; i++) {
+  //   bigData.push({ y: Math.floor((25 - (i * 0.05))), x: (time.setMinutes(time.getMinutes() + 5)) })
+  // }
+
+  const { temp } = useContext(DataContext)
 
   // chart
   const chartSet = {
@@ -50,7 +49,7 @@ function RealtimeGraph ({ status }) {
       colors: ['#00A6F3'],
       xaxis: {
         type: 'datetime',
-        min: (info.map(index => index.x))[0],
+        min: (temp.map(index => index.x))[0],
         labels: {
           datetimeUTC: false,
           style: { colors: '#000' }
@@ -78,15 +77,14 @@ function RealtimeGraph ({ status }) {
           },
           min: 0,
 
-          // max: Math.max(...[...new Set(info.map(index => index.y))]) + 10,
+          // max: Math.max(...[...new Set(temp.map(index => index.y))]) + 10,
           tickAmount: 6
         },
-      series: [
-        {
+      series:
+        [{
           name: 'data1',
-          data: info
-        }
-      ],
+          data: temp
+        }],
       tooltip: {
         enabled: true,
         shared: false,
@@ -144,14 +142,13 @@ function RealtimeGraph ({ status }) {
 
   function updateData (timeline) {
     chartSet.options.selection = timeline
-
     switch (timeline) {
       case 'half_minute':
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (info.map(index => index.x))[info.length - 6],
-          (info.map(index => index.x))[info.length - 1]
+          (temp.map(index => index.x))[temp.length - 6],
+          (temp.map(index => index.x))[temp.length - 1]
         )
 
         break
@@ -159,8 +156,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (info.map(index => index.x))[info.length - 12],
-          (info.map(index => index.x))[info.length - 1]
+          (temp.map(index => index.x))[temp.length - 12],
+          (temp.map(index => index.x))[temp.length - 1]
         )
 
         break
@@ -168,8 +165,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (info.map(index => index.x))[info.length - 74],
-          (info.map(index => index.x))[info.length - 1]
+          (temp.map(index => index.x))[temp.length - 74],
+          (temp.map(index => index.x))[temp.length - 1]
         )
 
         break
@@ -177,8 +174,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (info.map(index => index.x))[info.length - 144],
-          (info.map(index => index.x))[info.length - 1]
+          (temp.map(index => index.x))[temp.length - 144],
+          (temp.map(index => index.x))[temp.length - 1]
         )
 
         break
@@ -186,8 +183,8 @@ function RealtimeGraph ({ status }) {
         ApexCharts.exec(
           'mychart',
           'zoomX',
-          (info.map(index => index.x))[info.length - 288],
-          (info.map(index => index.x))[info.length - 1]
+          (temp.map(index => index.x))[temp.length - 288],
+          (temp.map(index => index.x))[temp.length - 1]
         )
 
         break
@@ -203,6 +200,14 @@ function RealtimeGraph ({ status }) {
         break
       default:
     }
+  }
+  const handleTime = () => {
+    setInfo(temp.map(index => temp.push(index)))
+    console.log(temp)
+  }
+
+  function updateSeries () {
+    chartSet.options.series[0] = { name: 'data2', data: temp }
   }
 
   const handleStartTime = (date) => {
@@ -242,8 +247,8 @@ function RealtimeGraph ({ status }) {
   ]
 
   useEffect(() => {
-    handleTime()
-  }, [])
+    updateSeries()
+  }, [temp])
 
   // style
   const theme = createMuiTheme({
