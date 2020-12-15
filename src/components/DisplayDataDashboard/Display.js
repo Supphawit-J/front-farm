@@ -12,16 +12,10 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 4px );
 -webkit-backdrop-filter: blur( 4px );
 border-radius: 10px;
-cursor: pointer;
 display : flex; 
 flex-direction : column ;
 justify-content : space-around ;
 transition: 0.5s;
-&:hover{
-  background-color : #F1B24A ;
-  transition: 0.5s;
-  opacity: 1;
-}
 `
 const TitleData = styled.div`
 color : white ;
