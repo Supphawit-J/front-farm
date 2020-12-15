@@ -22,18 +22,6 @@ export function GenerateData () {
     }
   }
 
-  // for (let i = 0; i < 144; i++) {
-  //   bigData.push({
-  //     device_id: 'DFG615',
-  //     device_status: 'on',
-  //     temp: Math.floor((25 - (i * 0.05))),
-  //     humidity: Math.floor(Math.random() * 100) + 40,
-  //     wind: Math.floor(Math.random() * 10),
-  //     lux: Math.floor(Math.random() * 400) + 50,
-  //     timestamp: (time.setMinutes(time.getMinutes() + 5))
-  //   })
-  // }
-
   async function handleUpdate () {
     bigData.push({
       device_id: 'D1',
@@ -93,14 +81,6 @@ export function GenerateData () {
       }
     }
 
-    // const count = 0
-
-    // for (let a = 0; a < 7; a++) {
-    //   for (let b = 0; b < 3; b++) {
-    //     data2.push({ device: [device[0]] })
-    //   }
-    //   data.push({ device: data2[a] })
-    // }
     setBigdata2(bigData2.push({
       status: 200,
       data: {
@@ -138,10 +118,3 @@ export function GenerateData () {
 
   return [{ bigData, bigData2 }, { useData, handleUpdate, clearData, weekData }]
 }
-
-// const time2 = new Date()
-// time2.setHours(6)
-// time2.setMinutes(0)
-// time2.setSeconds(0)
-
-// console.log(bigData2)
