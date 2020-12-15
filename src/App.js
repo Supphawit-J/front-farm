@@ -19,11 +19,11 @@ function App () {
 
   const handleData = () => {
     setDeviceData(deviceData.splice(0, deviceData.length))
-    // bigData2[0]
-    //   .data
-    //   .dataInOneDay.data.map(index => index)
-    //   .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
-    bigData.map(index => index).filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneDay.data.map(index => index)
+      .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
+    // bigData.map(index => index).filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
   }
   const handleDeviceData = () => {
     // setTemp(temp.splice(0, temp.length))
@@ -49,66 +49,67 @@ function App () {
     )
   }
 
-  // const [weekDevice, setWeekDevice] = useState([])
+  const [weekDevice, setWeekDevice] = useState([])
 
-  // const [weekTemp, setWeekTemp] = useState([])
-  // const [weekHumidity, setWeekHumidity] = useState([])
-  // const [weekLight, setWeekLight] = useState([])
-  // const [weekWind, setWeekWind] = useState([])
-  // const handleWeekDevice = () => {
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn1stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn2stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn3stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn4stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn5stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn6stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  //   bigData2[0]
-  //     .data
-  //     .dataInOneWeek.data.dataOn7stDay
-  //     .device.map(index => index)
-  //     .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
-  // }
+  const [weekTemp, setWeekTemp] = useState([])
+  const [weekHumidity, setWeekHumidity] = useState([])
+  const [weekLight, setWeekLight] = useState([])
+  const [weekWind, setWeekWind] = useState([])
+  const handleWeekDevice = () => {
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn1stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn2stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn3stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn4stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn5stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn6stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+    bigData2[0]
+      .data
+      .dataInOneWeek.data.dataOn7stDay
+      .device.map(index => index)
+      .filter(device => device.device_id === 'D1' ? weekDevice.push(device) : 0)
+  }
 
-  // const handleWeekTemp = () => {
-  //   weekDevice.map(index => weekTemp.push(index.temperature))
-  //   weekDevice.map(index => weekHumidity.push(index.humidity))
-  //   weekDevice.map(index => weekLight.push(index.sun_lux))
-  //   weekDevice.map(index => weekWind.push(index.wind_velocity))
-  // }
+  const handleWeekTemp = () => {
+    weekDevice.map(index => weekTemp.push(index.temperature))
+    weekDevice.map(index => weekHumidity.push(index.humidity))
+    weekDevice.map(index => weekLight.push(index.sun_lux))
+    weekDevice.map(index => weekWind.push(index.wind_velocity))
+  }
 
   const CronJob = require('cron').CronJob
 
   useEffect(() => {
     useData()
+    weekData()
     handleData()
     handleDeviceData()
-    // weekData()
-    // handleWeekDevice()
-    // handleWeekTemp()
+
+    handleWeekDevice()
+    handleWeekTemp()
 
     // const job = new CronJob('*/5 * * * * *', function () {
     //   if (bigData.length < 288) {
@@ -121,7 +122,7 @@ function App () {
     // }, null, true)
   }, [])
   return (
-    <DataContext.Provider value={{ text, temp, wind, light, humidity, select, setSelect }}>
+    <DataContext.Provider value={{ text, temp, wind, light, humidity, select, setSelect, weekTemp, weekHumidity, weekLight, weekWind }}>
       <GlobalStyle/>
       <Reset/>
       <Router>
