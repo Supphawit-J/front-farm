@@ -47,7 +47,7 @@ letter-spacing: 2px;
 
 function Display (props) {
   const NumberData = styled.div`
-  color : ${props.titlenumber >= 27 ? 'red' : 'white'} ;
+  color : ${props.titledata === 'Temperature' ? props.titlenumber > 30 ? 'red' : 'white' : props.titledata === 'Wind Speed' ? props.titlenumber > 8 ? 'red' : 'white' : props.titledata === 'Humidity' ? props.titlenumber > 80 ? 'red' : 'white' : props.titledata === 'Light' ? props.titlenumber > 300 ? 'red' : 'white' : 'white'};
   font-size : 8rem ;
   letter-spacing: 2px;
   `
