@@ -13,9 +13,9 @@ export function GenerateData () {
         device_id: 'D1',
         device_status: 'on',
         temp: Math.floor(Math.random() * (35 - 25) + 25),
-        humidity: Math.floor(Math.random() * 100) + 40,
+        humidity: Math.floor(Math.random() * (100 - 40) + 40),
         wind: Math.floor(Math.random() * 10),
-        lux: Math.floor(Math.random() * 400) + 50,
+        lux: Math.floor(Math.random() * (400 - 50) + 50),
         timestamp: new Date(time.setMinutes(time.getMinutes() + 5))
       }))
       // console.log(bigData[bigData.length - 1])
@@ -48,33 +48,33 @@ export function GenerateData () {
           temperature: [
             {
               device_id: 1,
-              max: Math.floor((Math.random() * (10 - 5)) + 5),
-              min: Math.floor((Math.random() * (10 - 5)) + 5),
-              avg: Math.floor((Math.random() * (10 - 5)) + 5)
+              max: Math.floor((Math.random() * (35 - 30)) + 30),
+              min: Math.floor((Math.random() * (20 - 15)) + 15),
+              avg: Math.floor((Math.random() * (29 - 21)) + 21)
             }
           ],
           humidity: [
             {
               device_id: 1,
-              max: Math.floor((Math.random() * (10 - 5)) + 5),
-              min: Math.floor((Math.random() * (10 - 5)) + 5),
-              avg: Math.floor((Math.random() * (10 - 5)) + 5)
+              max: Math.floor((Math.random() * (100 - 81)) + 81),
+              min: Math.floor((Math.random() * (60 - 40)) + 40),
+              avg: Math.floor((Math.random() * (80 - 61)) + 61)
             }
           ],
           wind_velocity: [
             {
               device_id: 1,
-              max: Math.floor((Math.random() * (10 - 5)) + 5),
-              min: Math.floor((Math.random() * (10 - 5)) + 5),
-              avg: Math.floor((Math.random() * (10 - 5)) + 5)
+              max: Math.floor((Math.random() * (10 - 8)) + 8),
+              min: Math.floor((Math.random() * 3)),
+              avg: Math.floor((Math.random() * (7 - 4)) + 4)
             }
           ],
           sun_lux: [
             {
               device_id: 1,
-              max: Math.floor((Math.random() * (10 - 5)) + 5),
-              min: Math.floor((Math.random() * (10 - 5)) + 5),
-              avg: Math.floor((Math.random() * (10 - 5)) + 5)
+              max: Math.floor((Math.random() * (400 - 300)) + 300),
+              min: Math.floor((Math.random() * (199 - 50)) + 50),
+              avg: Math.floor((Math.random() * (299 - 200)) + 200)
             }
           ]
         })
