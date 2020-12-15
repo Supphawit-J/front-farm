@@ -14,7 +14,7 @@ margin : 40px 0 0 0 ;
 
 const TitleName = styled.div`
 align-items : center ;
-font-size : 3rem;
+font-size : 4rem;
 letter-spacing: 5px;
 color : #ffffff ;
 margin : 0 0 0 35px ;
