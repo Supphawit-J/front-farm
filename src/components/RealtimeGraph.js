@@ -1,5 +1,5 @@
 import 'date-fns'
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import Chart from 'react-apexcharts'
 import ApexCharts from 'apexcharts'
 import { styled, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
@@ -12,16 +12,6 @@ import Container from '@material-ui/core/Container'
 import { DataContext } from '../context/DataContext'
 /* global alert */
 function RealtimeGraph ({ status }) {
-  // data
-  // const time = new Date()
-  // const bigData = []
-  // for (let i = 0; i < 144; i++) {
-  //   bigData.push({ y: Math.floor((i - (0.9 * i)) + 15 - (0.03 * i)), x: (time.setMinutes(time.getMinutes() + 5)) })
-  // }
-  // for (let i = 0; i < 144; i++) {
-  //   bigData.push({ y: Math.floor((25 - (i * 0.05))), x: (time.setMinutes(time.getMinutes() + 5)) })
-  // }
-
   const { temp, wind, light, humidity, select } = useContext(DataContext)
 
   function switchData () {
@@ -54,6 +44,9 @@ function RealtimeGraph ({ status }) {
         toolbar: {
           show: false,
           autoSelected: 'zoom'
+        },
+        animations: {
+          enabled: false
         }
       },
       dataLabels: {
@@ -214,10 +207,6 @@ function RealtimeGraph ({ status }) {
     }
   }
 
-  function updateSeries () {
-    chartSet.options.series[0] = { name: 'data2', data: temp }
-  }
-
   const handleStartTime = (date) => {
     if (endTime) {
       if (((new Date(endTime).getTime()) - (new Date(startTime).getTime())) <= 0) {
@@ -254,9 +243,8 @@ function RealtimeGraph ({ status }) {
     { value: endTime, func: handleEndTime }
   ]
 
-  useEffect(() => {
-    updateData('six_hour')
-  }, [])
+  // useEffect(() => {
+  // }, [])
 
   // style
   const theme = createMuiTheme({
