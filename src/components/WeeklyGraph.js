@@ -1,27 +1,33 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Chart from 'react-apexcharts'
 import ApexCharts from 'apexcharts'
 import styled from 'styled-components'
+import { DataContext } from '../context/DataContext'
 
 function WeeklyGraph ({ status }) {
   // gen  7 day
+  const { select, weekTemp, weekHumidity, weekLight, weekWind } = useContext(DataContext)
+  const time = new Date()
+  time.setDate(time.getDate() - 8)
+  const category = []
+  for (let i = 0; i < 7; i++) {
+    category.push(new Date(time.setDate(time.getDate() + 1)).toLocaleString('default', { weekday: 'short' }))
+  }
+  console.log(category)
+  function switchData () {
+    switch (select) {
+      case 'temp' :
+        return weekTemp
+      case 'wind' :
+        return weekWind
+      case 'light':
+        return weekLight
+      case 'humidity':
+        return weekHumidity
+      default:
+    }
+  }
 
-  const [avg, setAvg] = useState([])
-  const bigData2 = []
-  const time2 = new Date()
-  for (let j = 0; j < 6; j++) {
-    bigData2.push({
-      value: {
-        max: Math.floor((Math.random() * (10 - 5)) + 5),
-        min: Math.floor((Math.random() * (10 - 5)) + 5),
-        avg: Math.floor((Math.random() * (10 - 5)) + 5)
-      },
-      time: (new Date(time2.setDate(time2.getDate() + 1))).toLocaleString('default', { weekday: 'short' })
-    })
-  }
-  const handleAvg = () => {
-    setAvg(bigData2.map(index => index))
-  }
   const GraphContainer = styled.div`
     padding: 1rem;
     width: 95%;
@@ -58,7 +64,8 @@ function WeeklyGraph ({ status }) {
         colors: ['transparent']
       },
       xaxis: {
-
+        type: 'category',
+        categories: category,
         labels: {
           style: {
             colors: '#000'
@@ -80,7 +87,7 @@ function WeeklyGraph ({ status }) {
           show: true
         },
         title: {
-          text: 'something',
+          text: select,
           style: {
             color: '#000'
           }
@@ -97,26 +104,25 @@ function WeeklyGraph ({ status }) {
       tooltip: {
         y: {
           formatter: function (val) {
-            return val + ' thousands'
+            return val
           }
         }
       },
       series: [{
         name: 'max',
-        data: avg.map(index => ({ y: index.value.max, x: index.time }))
+        data: switchData().map(index => index[0].max)
       }, {
         name: 'min',
-        data: avg.map(index => ({ y: index.value.min, x: index.time }))
+        data: switchData().map(index => index[0].min)
       }, {
         name: 'avg',
-        data: avg.map(index => ({ y: index.value.avg, x: index.time }))
+        data: switchData().map(index => index[0].avg)
       }]
     }
 
   }
 
   useEffect(() => {
-    handleAvg()
   }, [])
   return (
     <GraphContainer style={{ display: status === true ? 'block' : 'none' }}>
