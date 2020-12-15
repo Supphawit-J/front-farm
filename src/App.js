@@ -6,6 +6,8 @@ import GlobalStyle from './components/GlobalStyle'
 import routes from './config/routes'
 import { DataContext } from './context/DataContext'
 import { GenerateData } from './utils/generateData'
+import PrivateRoute from './config/PrivateRoute'
+import Dashboard from './pages/Dashboard'
 
 function App () {
   const [{ bigData, bigData2 }, { useData, handleUpdate, clearData, weekData }] = GenerateData()
@@ -50,6 +52,7 @@ function App () {
   }
 
   const [weekDevice, setWeekDevice] = useState([])
+  const [state, setState] = useState(false)
 
   const [weekTemp, setWeekTemp] = useState([])
   const [weekHumidity, setWeekHumidity] = useState([])
@@ -122,14 +125,15 @@ function App () {
     // }, null, true)
   }, [])
   return (
-    <DataContext.Provider value={{ text, temp, wind, light, humidity, select, setSelect, weekTemp, weekHumidity, weekLight, weekWind }}>
+    <DataContext.Provider value={{ text, temp, wind, light, humidity, select, setSelect, weekTemp, weekHumidity, weekLight, weekWind, state, setState }}>
       <GlobalStyle/>
       <Reset/>
       <Router>
         <Suspense fallback = '...loading'>
         <Switch>
+        <Route exact path="/" component={Dashboard} />
             {Object.keys(routes).map(routeKey => (
-        <Route key = {routeKey} {...routes[routeKey] }/>))}
+        <PrivateRoute key = {routeKey} {...routes[routeKey] }/>))}
           </Switch>
         </Suspense>
       </Router>

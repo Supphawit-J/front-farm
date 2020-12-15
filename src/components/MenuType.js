@@ -89,10 +89,11 @@ letter-spacing: 1px;
 `
 
 function MenuType () {
-  const { setSelect } = useContext(DataContext)
+  const { setSelect, setState } = useContext(DataContext)
 
   const handleSelect = (choice) => {
     setSelect(choice)
+    setState(true)
   }
 
   return (
