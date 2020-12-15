@@ -25,7 +25,7 @@ function App () {
     //   .filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
     bigData.map(index => index).filter(device => device.device_id === 'D1' ? deviceData.push(device) : 0)
   }
-  const handleTemp = () => {
+  const handleDeviceData = () => {
     // setTemp(temp.splice(0, temp.length))
     setText({
       temp: deviceData[deviceData.length - 1].temp,
@@ -36,17 +36,14 @@ function App () {
     deviceData.map(
       index => temp.push({ x: new Date(index.timestamp).getTime(), y: index.temp })
     )
-    // setHumidity(humidity.splice(0, humidity.length))
 
     deviceData.map(
       index => humidity.push({ x: new Date(index.timestamp).getTime(), y: index.humidity })
     )
-    // setWind(wind.splice(0, wind.length))
 
     deviceData.map(
       index => wind.push({ x: new Date(index.timestamp).getTime(), y: index.wind })
     )
-    // setLight(light.splice(0, light.length))
     deviceData.map(
       index => light.push({ x: new Date(index.timestamp).getTime(), y: index.lux })
     )
@@ -108,7 +105,7 @@ function App () {
   useEffect(() => {
     useData()
     handleData()
-    handleTemp()
+    handleDeviceData()
     // weekData()
     // handleWeekDevice()
     // handleWeekTemp()
