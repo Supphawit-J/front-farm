@@ -46,8 +46,8 @@ function TitleDashboard (props) {
       <p>{props.titlename}</p>
     </TitleName>
     <IconToggle>
-    <SettingMode>Dark Mode</SettingMode>
-    <ToggleOff size="40" />
+    {/* <SettingMode>Dark Mode</SettingMode>
+    <ToggleOff size="40" /> */}
     </IconToggle>
     </ShowCase>
   )
